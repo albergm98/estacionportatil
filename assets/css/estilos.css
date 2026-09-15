@@ -1,0 +1,584 @@
+/* ============================================================================
+   Estacionportatil · sistema de diseño
+   Sin frameworks: Tailwind por CDN compila en el navegador y retrasa el LCP,
+   que es factor de posicionamiento. Aquí todo va precompilado.
+   Iconos: sprite local de Lucide (ISC) en assets/img/iconos.svg, sin JS.
+   Tipografías: variables auto-alojadas (sin CDN de Google, mejor para RGPD).
+   Convención: clases y variables en castellano.
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fuentes/inter-variable.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('../fuentes/space-grotesk-variable.woff2') format('woff2-variations');
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+:root {
+  /* Paleta: verde energía sobre grafito frío */
+  --verde-300: #6ee7a8;
+  --verde-500: #16a34a;
+  --verde-600: #15803d;
+  --verde-700: #166534;
+  --verde-900: #052e16;
+  --verde-tenue: #f0fdf5;
+  --ambar-400: #fbbf24;
+  --ambar-500: #f59e0b;
+  --naranja-500: #f97316;
+  --naranja-600: #ea580c;
+  --grafito-950: #080c14;
+  --grafito-900: #0f172a;
+  --grafito-800: #1e293b;
+  --tinta: #111827;
+  --tinta-media: #4b5563;
+  --tinta-suave: #6b7280;
+  --linea: #e8eaee;
+  --linea-fuerte: #d6dae1;
+  --fondo: #f7f8fa;
+  --blanco: #fff;
+
+  --display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --texto: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radio-s: 8px;
+  --radio: 14px;
+  --radio-l: 20px;
+  --sombra-1: 0 1px 2px rgb(9 13 24 / 6%), 0 1px 3px rgb(9 13 24 / 4%);
+  --sombra-2: 0 4px 12px rgb(9 13 24 / 7%), 0 1px 3px rgb(9 13 24 / 5%);
+  --sombra-3: 0 18px 40px -12px rgb(9 13 24 / 22%);
+  --ancho: 1160px;
+  --transicion: .28s cubic-bezier(.4, 0, .2, 1);
+  --transicion-lenta: .4s cubic-bezier(.4, 0, .2, 1);
+  --cabecera-alto: 72px;
+}
+
+*, *::before, *::after { box-sizing: border-box }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--cabecera-alto) + 12px);
+}
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--tinta);
+  font: 400 16.5px/1.68 var(--texto);
+  font-feature-settings: 'cv11', 'ss01';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* height:auto es imprescindible: los atributos width/height del HTML (que sí
+   hacen falta para reservar el hueco y evitar saltos de maquetación) el
+   navegador los aplica también como estilo, y sin esto una foto de 2.448 px de
+   alto se dibuja a 2.448 px. */
+img, svg { max-width: 100% }
+img { height: auto }
+a { color: var(--verde-600); text-decoration-thickness: 1px; text-underline-offset: 3px }
+a:hover { color: var(--verde-700) }
+::selection { background: var(--verde-300); color: var(--verde-900) }
+:focus-visible { outline: 2px solid var(--verde-500); outline-offset: 3px; border-radius: 4px }
+code { background: var(--fondo); border: 1px solid var(--linea); border-radius: 5px; padding: 1px 6px; font-size: .88em }
+
+h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; line-height: 1.15; letter-spacing: -.025em; margin: 0 0 .5em; color: var(--grafito-900) }
+h1 { font-size: clamp(2rem, 5.2vw, 3.5rem); font-weight: 700; letter-spacing: -.035em }
+h2 { font-size: clamp(1.55rem, 3.2vw, 2.15rem) }
+h3 { font-size: 1.2rem }
+h4 { font-size: 1rem }
+
+/* --- Iconos -------------------------------------------------------------- */
+/* Un solo <svg><use> por icono. El trazo se hereda del color del texto. */
+.icono {
+  width: 1.15em; height: 1.15em; flex: none;
+  fill: none; stroke: currentColor; stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round;
+  vertical-align: -.2em;
+}
+.icono--s { width: 1em; height: 1em; stroke-width: 2.2 }
+.icono--l { width: 1.6rem; height: 1.6rem }
+.icono--xl { width: 2rem; height: 2rem; stroke-width: 1.7 }
+
+/* Icono dentro de una cápsula de color: el detalle que sustituye al emoji. */
+.marco-icono {
+  display: inline-grid; place-items: center;
+  width: 44px; height: 44px; flex: none;
+  border-radius: 12px;
+  background: var(--verde-tenue); color: var(--verde-600);
+  border: 1px solid #d7f5e3;
+}
+.marco-icono--oscuro { background: rgb(110 231 168 / 12%); border-color: rgb(110 231 168 / 22%); color: var(--verde-300) }
+.marco-icono--ambar { background: #fffbeb; border-color: #fde68a; color: #b45309 }
+.marco-icono--grande { width: 56px; height: 56px; border-radius: 16px }
+
+/* --- Estructura ---------------------------------------------------------- */
+.contenedor { width: 100%; max-width: var(--ancho); margin-inline: auto; padding-inline: 22px }
+/* Todas las páginas comparten el ancho de la cabecera. La variante se mantiene
+   como alias para no tener que tocar el marcado de las doce páginas. */
+.contenedor--estrecho { max-width: var(--ancho) }
+.seccion { padding-block: clamp(52px, 7vw, 92px) }
+.seccion--blanca { background: var(--blanco); border-block: 1px solid var(--linea) }
+.centrado { text-align: center }
+.intro { color: var(--tinta-media); font-size: 1.08rem }
+.rejilla { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) }
+.fila { display: flex; align-items: center; gap: 12px; flex-wrap: wrap }
+.encabezado-seccion { margin-bottom: 40px }
+
+/* --- Cabecera ------------------------------------------------------------ */
+.cabecera {
+  position: sticky; top: 0; z-index: 60;
+  background: rgb(255 255 255 / 88%);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--linea);
+}
+.cabecera .contenedor { display: flex; align-items: center; justify-content: space-between; gap: 18px; min-height: 68px }
+.logotipo {
+  display: inline-flex; align-items: center; gap: 9px; text-decoration: none;
+  font-family: var(--display); font-weight: 700; font-size: 1.16rem; letter-spacing: -.03em;
+  color: var(--grafito-900); white-space: nowrap;
+}
+.logotipo .icono { color: var(--verde-500); width: 1.35rem; height: 1.35rem }
+.logotipo b { color: var(--verde-600); font-weight: 700 }
+.menu { display: flex; align-items: center; gap: 6px 22px; font-size: .925rem; font-weight: 500 }
+.menu > a { color: var(--tinta-media); text-decoration: none; transition: color var(--transicion) }
+.menu > a:hover { color: var(--verde-600) }
+.menu > a[aria-current="page"] { color: var(--grafito-900); font-weight: 600 }
+.menu__grupo {
+  position: relative;
+  background: none; border: 0; border-radius: 0; padding: 0; margin: 0; box-shadow: none;
+}
+.menu__grupo:hover { border: 0; box-shadow: none }
+.menu__grupo[open] { border: 0; box-shadow: none }
+.menu__grupo summary {
+  list-style: none; cursor: pointer; color: var(--tinta-media);
+  display: inline-flex; align-items: center; justify-content: flex-start; gap: 5px;
+  padding: 0; margin: 0; font-weight: 500; font-size: inherit;
+  background: none; border: 0; box-shadow: none;
+  transition: color var(--transicion);
+}
+.menu__grupo summary::-webkit-details-marker { display: none }
+.menu__grupo summary::after {
+  content: ""; width: .45em; height: .45em; margin-top: -.12em; flex: none;
+  border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg); transition: transform var(--transicion);
+}
+.menu__grupo[open] summary { color: var(--grafito-900) }
+.menu__grupo[open] summary::after { transform: rotate(225deg); margin-top: .15em }
+.menu__grupo summary:hover { color: var(--verde-600) }
+.menu__grupo summary .icono { display: none }
+.menu__lista {
+  position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%);
+  min-width: 248px; padding: 8px; z-index: 40;
+  background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio);
+  box-shadow: var(--sombra-3); display: grid; gap: 2px;
+}
+.menu__grupo[open] .menu__lista {
+  animation: menu-entrar var(--transicion) both;
+}
+@keyframes menu-entrar {
+  from { opacity: 0; transform: translateX(-50%) translateY(-10px) scale(.98) }
+  to { opacity: 1; transform: translateX(-50%) translateY(0) scale(1) }
+}
+.menu__lista a {
+  display: block; padding: 10px 12px; border-radius: 8px;
+  color: var(--tinta); text-decoration: none; font-weight: 500; font-size: .9rem;
+  transition: background-color var(--transicion), color var(--transicion), transform var(--transicion);
+}
+.menu__lista a:hover { background: var(--verde-tenue); color: var(--verde-700); transform: translateX(2px) }
+
+.menu-boton {
+  display: none; width: 42px; height: 42px; padding: 0; border: 1px solid var(--linea);
+  border-radius: 10px; background: var(--blanco); cursor: pointer;
+  flex-direction: column; align-items: center; justify-content: center; gap: 5px; flex: none;
+  transition: border-color var(--transicion), background-color var(--transicion);
+}
+.menu-boton:hover { border-color: var(--verde-500) }
+.menu-boton span {
+  display: block; width: 18px; height: 2px; background: var(--grafito-900);
+  border-radius: 2px; transition: transform var(--transicion), opacity var(--transicion);
+}
+.cabecera--abierta .menu-boton span:nth-child(1) { transform: translateY(7px) rotate(45deg) }
+.cabecera--abierta .menu-boton span:nth-child(2) { opacity: 0 }
+.cabecera--abierta .menu-boton span:nth-child(3) { transform: translateY(-7px) rotate(-45deg) }
+
+/* --- Botones ------------------------------------------------------------- */
+.boton {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 11px 19px; border: 1px solid transparent; border-radius: 10px;
+  font: 600 .93rem/1 var(--texto); text-decoration: none; cursor: pointer; white-space: nowrap;
+  transition: background-color var(--transicion), transform var(--transicion), box-shadow var(--transicion);
+}
+.boton:hover { transform: translateY(-1px) }
+.boton:active { transform: translateY(0) }
+.boton--verde { background: var(--verde-500); color: var(--blanco); box-shadow: var(--sombra-1) }
+.boton--verde:hover { background: var(--verde-600); color: var(--blanco); box-shadow: var(--sombra-2) }
+.boton--naranja { background: var(--naranja-500); color: var(--blanco); box-shadow: 0 6px 18px -6px rgb(249 115 22 / 55%) }
+.boton--naranja:hover { background: var(--naranja-600); color: var(--blanco) }
+.boton--contorno { background: var(--blanco); color: var(--grafito-900); border-color: var(--linea-fuerte) }
+.boton--contorno:hover { border-color: var(--verde-500); color: var(--verde-600) }
+.boton--fantasma { background: rgb(255 255 255 / 8%); color: var(--blanco); border-color: rgb(255 255 255 / 22%) }
+.boton--fantasma:hover { background: rgb(255 255 255 / 15%); color: var(--blanco) }
+.boton--grande { padding: 15px 27px; font-size: 1.02rem; border-radius: 12px }
+.boton--mini { padding: 8px 13px; font-size: .8rem; border-radius: 8px }
+
+/* --- Portada ------------------------------------------------------------- */
+/* Fotografía real de dominio público + velo oscuro + retícula técnica.
+   Nada de degradados genéricos: la foto aporta el contexto nocturno off-grid. */
+.portada {
+  position: relative; overflow: hidden; color: var(--blanco);
+  background: var(--grafito-950);
+  padding-block: clamp(56px, 7vw, 92px);
+}
+/* Encuadre desplazado hacia el cielo: la carrocería clara de la furgoneta caía
+   detrás del párrafo y dejaba el texto por debajo del contraste mínimo. */
+.portada__foto {
+  position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 62%;
+  filter: saturate(.95) contrast(1.06) brightness(.88);
+}
+/* Único velo por encima de la foto, más oscuro del lado del texto para que el
+   párrafo mantenga el contraste. El z-index es imprescindible: los
+   pseudoelementos se pintan en orden de documento y ::before quedaría por
+   debajo de la imagen, sin oscurecer nada. */
+.portada::before {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background:
+    linear-gradient(95deg, rgb(8 12 20 / 95%) 0%, rgb(8 12 20 / 90%) 32%, rgb(8 12 20 / 45%) 60%, rgb(8 12 20 / 20%) 100%),
+    linear-gradient(180deg, transparent 55%, rgb(8 12 20 / 65%) 88%, var(--grafito-950) 100%),
+    radial-gradient(70% 60% at 12% 10%, rgb(22 101 52 / 45%) 0%, transparent 72%);
+}
+.portada .contenedor { position: relative; z-index: 2 }
+.portada__rejilla { display: grid; gap: clamp(34px, 5vw, 56px); grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); align-items: center }
+.portada h1 { color: var(--blanco) }
+.portada p { color: #d7dee7; font-size: clamp(1.02rem, 2vw, 1.17rem); max-width: 54ch; margin: 0 0 30px }
+.resalte { color: var(--verde-300) }
+
+/* --- Esquema eléctrico animado (portada) --------------------------------- */
+.esquema {
+  width: 100%; height: auto;
+  background: rgb(255 255 255 / 4%);
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: var(--radio-l);
+  backdrop-filter: blur(6px);
+}
+.esquema__caja { fill: rgb(255 255 255 / 7%); stroke: rgb(255 255 255 / 18%); stroke-width: 1 }
+.esquema__caja--activa { fill: rgb(110 231 168 / 12%); stroke: rgb(110 231 168 / 40%) }
+.esquema__icono { fill: none; stroke: var(--verde-300); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round }
+.esquema__icono--sol { stroke: var(--ambar-400) }
+.esquema__rotulo { fill: #94a3b8; font: 600 9.5px var(--texto); letter-spacing: .06em; text-transform: uppercase }
+.esquema__valor { fill: var(--blanco); font: 700 13px var(--display) }
+.esquema__unidad { fill: var(--verde-300); font: 600 9.5px var(--texto) }
+/* El trazo discontinuo en movimiento representa la corriente circulando. */
+.esquema__cable { fill: none; stroke: var(--verde-300); stroke-width: 1.8; stroke-dasharray: 5 7; animation: fluir 1s linear infinite }
+.esquema__cable--sol { stroke: var(--ambar-400); animation-duration: 1.6s }
+@keyframes fluir { to { stroke-dashoffset: -12 } }
+
+/* --- Fotografías --------------------------------------------------------- */
+.tarjeta__foto {
+  display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover;
+  border-radius: 10px; margin-bottom: 4px; background: var(--fondo);
+}
+figure { margin: 30px 0 }
+figure img { display: block; width: 100%; height: auto; border-radius: var(--radio); background: var(--fondo) }
+figcaption { color: var(--tinta-suave); font-size: .82rem; margin-top: 10px; text-align: center }
+.banda-foto { position: relative; overflow: hidden; border-radius: var(--radio-l); margin-block: 8px }
+/* 2,4:1 en lugar de 3:1: los primeros planos de producto quedaban decapitados. */
+.banda-foto img { display: block; width: 100%; height: auto; aspect-ratio: 12 / 5; object-fit: cover }
+.banda-foto--panoramica img { aspect-ratio: 3 / 1 }
+.banda-foto figcaption {
+  position: absolute; inset: auto 0 0 0; margin: 0; padding: 26px 24px 18px; text-align: left;
+  background: linear-gradient(transparent, rgb(8 12 20 / 88%)); color: #e2e8f0; font-size: .88rem;
+}
+.pastilla {
+  display: inline-flex; align-items: center; gap: 7px; margin-bottom: 22px;
+  padding: 6px 14px 6px 11px; border-radius: 999px;
+  background: rgb(110 231 168 / 10%); border: 1px solid rgb(110 231 168 / 25%);
+  color: var(--verde-300); font-size: .74rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+}
+.acciones { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center }
+.confianza {
+  display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: center;
+  margin-top: 40px; padding-top: 28px; border-top: 1px solid rgb(255 255 255 / 10%);
+  color: #b3c0d0; font-size: .85rem;
+}
+.confianza span { display: inline-flex; align-items: center; gap: 7px }
+.confianza .icono { color: var(--verde-300) }
+
+/* --- Tarjetas ------------------------------------------------------------ */
+.tarjeta {
+  background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio);
+  padding: 24px; box-shadow: var(--sombra-1);
+}
+.tarjeta--enlace {
+  display: flex; flex-direction: column; text-decoration: none; color: inherit;
+  transition: box-shadow var(--transicion), transform var(--transicion), border-color var(--transicion);
+}
+.tarjeta--enlace:hover { border-color: var(--linea-fuerte); box-shadow: var(--sombra-3); transform: translateY(-3px); color: inherit }
+.tarjeta--enlace:hover h3 { color: var(--verde-600) }
+.tarjeta h3 { margin: 16px 0 8px; transition: color var(--transicion) }
+.tarjeta p { color: var(--tinta-media); font-size: .93rem; margin: 0 }
+.etiqueta { display: inline-block; color: var(--verde-600); font-size: .71rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase }
+.meta {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  margin-top: auto; padding-top: 16px; border-top: 1px solid var(--linea);
+  color: var(--tinta-suave); font-size: .81rem;
+}
+.meta strong { color: var(--verde-600); display: inline-flex; align-items: center; gap: 5px; font-weight: 600 }
+
+/* --- Calculadora --------------------------------------------------------- */
+.panel { background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio-l); padding: clamp(18px, 3vw, 30px); box-shadow: var(--sombra-2) }
+.dispositivo {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 14px;
+  padding: 13px 4px; border-bottom: 1px solid var(--linea);
+}
+.dispositivo:last-child { border-bottom: 0 }
+.dispositivo__info { display: flex; align-items: center; gap: 13px; flex: 1 1 250px; min-width: 0 }
+.dispositivo__info strong { display: block; font-size: .95rem; font-weight: 600 }
+.dispositivo__info small { color: var(--tinta-suave); font-size: .79rem }
+.dispositivo__control { display: flex; align-items: center; gap: 14px; flex: 1 1 200px }
+.dispositivo output { font-size: .87rem; font-weight: 600; min-width: 74px; text-align: right; font-variant-numeric: tabular-nums }
+.dispositivo--activo .marco-icono { background: var(--verde-500); border-color: var(--verde-500); color: var(--blanco) }
+
+/* Deslizante con aspecto propio en los tres motores */
+input[type="range"] {
+  flex: 1; min-width: 90px; height: 6px; margin: 0; padding: 0;
+  appearance: none; background: var(--linea-fuerte); border-radius: 999px; cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none; width: 19px; height: 19px; border-radius: 50%;
+  background: var(--blanco); border: 2.5px solid var(--verde-500);
+  box-shadow: var(--sombra-1); cursor: grab; transition: transform var(--transicion);
+}
+input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15) }
+input[type="range"]::-moz-range-thumb {
+  width: 19px; height: 19px; border-radius: 50%;
+  background: var(--blanco); border: 2.5px solid var(--verde-500); cursor: grab;
+}
+
+.selector {
+  display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  padding-bottom: 22px; margin-bottom: 8px; border-bottom: 1px solid var(--linea);
+}
+.selector label { display: block; font-size: .78rem; font-weight: 600; color: var(--tinta-media); margin-bottom: 6px }
+.selector select {
+  width: 100%; padding: 10px 12px; border: 1px solid var(--linea-fuerte); border-radius: var(--radio-s);
+  font: inherit; font-size: .9rem; background: var(--blanco); color: var(--tinta); cursor: pointer;
+}
+.selector select:hover { border-color: var(--verde-500) }
+
+.resultado {
+  display: grid; gap: 26px; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  margin: 26px 0 0; padding: 28px;
+  background: radial-gradient(120% 120% at 0% 0%, var(--verde-700) 0%, var(--grafito-900) 60%);
+  border-radius: var(--radio); color: var(--blanco);
+}
+.resultado h3 { color: var(--blanco); margin: 10px 0 6px }
+.resultado dt { display: flex; align-items: center; gap: 7px; color: #9fb3c8; font-size: .73rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase }
+.resultado dd { margin: 3px 0 18px; font-size: 1.02rem; font-weight: 500 }
+.resultado dd:last-child { margin-bottom: 0 }
+.cifra { font-family: var(--display); font-size: 2.7rem; font-weight: 700; color: var(--verde-300); line-height: 1; letter-spacing: -.03em; font-variant-numeric: tabular-nums }
+.cifra + span { color: #c3cbd8; font-size: .95rem; font-weight: 500 }
+.recomendacion { background: rgb(255 255 255 / 7%); border: 1px solid rgb(255 255 255 / 13%); border-radius: var(--radio); padding: 20px; align-self: start }
+.recomendacion p { color: #c3cbd8; font-size: .88rem; margin: 0 0 16px }
+
+/* --- Tablas -------------------------------------------------------------- */
+.tabla-envoltorio { overflow-x: auto; background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio); box-shadow: var(--sombra-1) }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; text-align: left }
+thead { background: var(--grafito-900); color: var(--blanco) }
+thead th { font-family: var(--texto); font-size: .72rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; color: #cbd5e1 }
+th, td { padding: 15px 17px; vertical-align: middle }
+tbody th { font-weight: 600; font-size: .94rem; min-width: 200px }
+tbody tr { border-top: 1px solid var(--linea); transition: background-color var(--transicion) }
+tbody tr:hover { background: var(--verde-tenue) }
+td small, th small { display: block; margin-top: 3px; color: var(--tinta-suave); font-weight: 400; font-size: .78rem }
+.nota-tabla { color: var(--tinta-suave); font-size: .82rem; margin-top: 14px }
+.destacada { background: #fcfefc; box-shadow: inset 3px 0 0 var(--verde-500) }
+
+/* Nota sobre 10 en cápsula, más legible que una estrella suelta */
+.puntuacion {
+  display: inline-flex; align-items: baseline; gap: 2px; padding: 5px 10px;
+  background: var(--verde-tenue); border: 1px solid #cdf0dc; border-radius: 999px;
+  color: var(--verde-700); font-family: var(--display); font-weight: 700; font-size: 1rem;
+}
+.puntuacion span { font-size: .72rem; font-weight: 500; opacity: .7 }
+
+/* --- Artículos ----------------------------------------------------------- */
+.migas { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; padding-block: 20px; color: var(--tinta-suave); font-size: .82rem }
+.migas a { color: var(--tinta-suave); text-decoration: none }
+.migas a:hover { color: var(--verde-600); text-decoration: underline }
+.articulo { background: var(--blanco); padding-bottom: 60px }
+/* En las guías largas la prosa de primer nivel se limita a unos 80 caracteres
+   por línea, que es la medida cómoda de lectura. Títulos, tablas, figuras y
+   cajas de aviso siguen ocupando todo el ancho de la cabecera. */
+.articulo--guia .contenedor > :is(p, ul, ol):not(.divulgacion) { max-width: 80ch }
+.articulo p, .articulo li { font-size: 1.065rem; color: #27303f }
+.articulo h2 { margin-top: 2.1em; padding-top: .7em; border-top: 1px solid var(--linea) }
+.articulo h3 { margin-top: 1.8em }
+.articulo ul, .articulo ol { padding-left: 1.35em }
+.articulo li { margin-bottom: .55em }
+.articulo li::marker { color: var(--verde-500) }
+.dato-pendiente {
+  background: #fffbeb; color: #92400e; border-radius: 4px; padding: 0 .2em;
+  font-weight: 600; font-style: italic;
+}
+.oculto-legal { display: none }
+.lista-legal { list-style: none; padding: 0; margin: 1em 0; display: grid; gap: 10px }
+.lista-legal li { margin: 0; padding: 12px 16px; background: var(--fondo); border: 1px solid var(--linea); border-radius: var(--radio-s) }
+.lista-legal strong { display: inline-block; min-width: 9.5em; color: var(--tinta-suave); font-size: .82rem; text-transform: uppercase; letter-spacing: .04em; font-weight: 600 }
+
+/* Lista de pros y contras con iconos en lugar de viñetas */
+.balance { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-block: 26px }
+.balance > div { border: 1px solid var(--linea); border-radius: var(--radio); padding: 18px 20px; background: var(--blanco) }
+.balance h4 { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; font-size: .78rem; letter-spacing: .07em; text-transform: uppercase }
+.balance ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 9px }
+.balance li { display: flex; gap: 9px; align-items: flex-start; font-size: .95rem; margin: 0 }
+.balance--pros h4 { color: var(--verde-600) }
+.balance--pros .icono { color: var(--verde-500); margin-top: .22em }
+.balance--contras h4 { color: var(--naranja-600) }
+.balance--contras .icono { color: var(--naranja-500); margin-top: .22em }
+
+.indice { background: var(--fondo); border: 1px solid var(--linea); border-radius: var(--radio); padding: 20px 24px; font-size: .95rem }
+.indice strong { display: flex; align-items: center; gap: 8px; font-family: var(--display); font-size: .78rem; letter-spacing: .07em; text-transform: uppercase; color: var(--tinta-media) }
+.indice ol { margin: 12px 0 0; display: grid; gap: 6px }
+.indice a { text-decoration: none }
+.indice a:hover { text-decoration: underline }
+
+.destacado, .aviso {
+  display: flex; gap: 14px; align-items: flex-start;
+  border-radius: var(--radio); padding: 18px 20px; margin-block: 28px;
+}
+.destacado { background: var(--verde-tenue); border: 1px solid #cdf0dc }
+.destacado .icono { color: var(--verde-600); margin-top: .18em }
+.aviso { background: #fffbeb; border: 1px solid #fde68a }
+.aviso .icono { color: #b45309; margin-top: .18em }
+.destacado p, .aviso p { margin: 0; font-size: .98rem }
+
+.ficha-autor { display: flex; gap: 16px; align-items: flex-start; background: var(--fondo); border: 1px solid var(--linea); border-radius: var(--radio); padding: 20px; margin-block: 36px }
+.ficha-autor p { margin: 0; font-size: .9rem; color: var(--tinta-media) }
+
+/* --- Preguntas frecuentes ------------------------------------------------ */
+main details:not(.menu__grupo) {
+  background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio);
+  padding: 17px 20px; margin-bottom: 11px;
+  transition: border-color var(--transicion), box-shadow var(--transicion);
+}
+main details:not(.menu__grupo):hover { border-color: var(--linea-fuerte) }
+main details:not(.menu__grupo)[open] { border-color: var(--verde-500); box-shadow: var(--sombra-1) }
+main details:not(.menu__grupo) summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  cursor: pointer; font-weight: 600; font-size: 1rem; list-style: none;
+}
+main details:not(.menu__grupo) summary::-webkit-details-marker { display: none }
+main details:not(.menu__grupo) summary .icono { color: var(--verde-500); transition: transform var(--transicion) }
+main details:not(.menu__grupo)[open] summary .icono { transform: rotate(180deg) }
+main details:not(.menu__grupo) p {
+  margin: 14px 0 0; color: var(--tinta-media); font-size: .96rem;
+  animation: faq-entrar var(--transicion) both;
+}
+@keyframes faq-entrar {
+  from { opacity: 0; transform: translateY(-6px) }
+  to { opacity: 1; transform: none }
+}
+
+/* --- Divulgación de afiliados ------------------------------------------- */
+.divulgacion {
+  display: flex; gap: 11px; align-items: flex-start;
+  background: #fffbeb; border: 1px solid #fde68a; border-radius: var(--radio-s);
+  padding: 13px 16px; margin-block: 22px; font-size: .84rem; color: #78350f;
+}
+.divulgacion .icono { color: #b45309; margin-top: .15em }
+.divulgacion a { color: #78350f }
+
+/* --- Pie ----------------------------------------------------------------- */
+.pie { background: var(--grafito-950); color: #94a3b8; padding-block: 56px 28px; font-size: .88rem }
+.pie h4 { color: var(--blanco); font-family: var(--texto); font-size: .74rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; margin-bottom: 16px }
+.pie a { color: #94a3b8; text-decoration: none; transition: color var(--transicion) }
+.pie a:hover { color: var(--blanco) }
+.pie ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px }
+.pie ul a { display: inline-flex; align-items: center; gap: 8px }
+.pie .logotipo { color: var(--blanco); margin-bottom: 14px }
+.pie .logotipo b { color: var(--verde-300) }
+.pie__legal {
+  display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between;
+  margin-top: 40px; padding-top: 24px; border-top: 1px solid #1e293b; font-size: .82rem;
+}
+.pie__legal nav { display: flex; flex-wrap: wrap; gap: 20px }
+
+@media (max-width: 980px) {
+  .portada__rejilla { grid-template-columns: 1fr }
+  .esquema { max-width: 100%; height: auto }
+}
+@media (max-width: 860px) {
+  .cabecera .contenedor { flex-wrap: wrap; min-height: 60px; padding-block: 10px; gap: 12px }
+  .cabecera .boton--verde { display: none }
+  .menu-boton { display: inline-flex; margin-left: auto }
+  .menu {
+    display: flex; order: 3; width: 100%;
+    flex-direction: column; align-items: stretch; gap: 4px;
+    max-height: 0; opacity: 0; overflow: hidden; pointer-events: none;
+    padding: 0; border-top: 1px solid transparent;
+    transition:
+      max-height var(--transicion-lenta),
+      opacity var(--transicion),
+      padding var(--transicion),
+      border-color var(--transicion);
+  }
+  .cabecera--abierta .menu {
+    max-height: min(78vh, 640px); opacity: 1; overflow-y: auto; pointer-events: auto;
+    padding: 10px 0 6px; border-top-color: var(--linea);
+  }
+  .menu__grupo { width: 100% }
+  .menu__grupo summary {
+    width: 100%; padding: 12px 4px; justify-content: space-between;
+    font-size: 1rem; color: var(--grafito-900);
+  }
+  .menu__lista {
+    position: static; left: auto; min-width: 0; width: 100%;
+    margin: 0 0 8px; box-shadow: none; border-color: var(--linea);
+    background: var(--fondo);
+    transform: none; animation: none;
+  }
+  .menu__grupo[open] .menu__lista {
+    animation: menu-entrar-movil var(--transicion) both;
+  }
+  @keyframes menu-entrar-movil {
+    from { opacity: 0; transform: translateY(-6px) }
+    to { opacity: 1; transform: none }
+  }
+  .menu__lista a:hover { transform: none }
+  .menu > a {
+    padding: 12px 4px; color: var(--grafito-900); font-size: 1rem;
+    transition: color var(--transicion), padding var(--transicion);
+  }
+  .acciones { flex-direction: column; align-items: stretch; gap: 10px }
+  .acciones .boton { width: 100%; justify-content: center }
+  .portada { padding-block: 40px 48px }
+  .portada p { margin-bottom: 22px }
+  .confianza { gap: 10px 16px; font-size: .82rem }
+  .resultado { grid-template-columns: 1fr; gap: 18px }
+  .selector { grid-template-columns: 1fr }
+  .pie .rejilla { gap: 28px }
+  .pie__legal { flex-direction: column; align-items: flex-start; gap: 12px }
+  .articulo h2 { margin-top: 1.5em }
+  th, td { padding: 12px 14px }
+  .banda-foto img { aspect-ratio: 16 / 10 }
+  .logotipo { font-size: 1.05rem }
+}
+@media (max-width: 480px) {
+  .contenedor { padding-inline: 16px }
+  .esquema { display: none }
+  .boton--grande { padding: 14px 18px; font-size: .95rem }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto }
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

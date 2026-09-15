@@ -1,0 +1,11 @@
+# Estacionportatil · robots.txt
+# Se permite el rastreo completo del sitio: todo el contenido es indexable.
+
+User-agent: *
+Allow: /
+
+# Las redirecciones de afiliado no aportan nada al índice y pueden
+# interpretarse como enlaces de pago. Se excluyen del rastreo.
+Disallow: /ir/
+
+Sitemap: https://estacionportatil.com/sitemap.xml

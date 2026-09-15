@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metodología: cómo analizamos y puntuamos | Estacionportatil</title>
+<meta name="description" content="Qué criterios usamos para puntuar estaciones de energía, qué fórmulas aplica nuestra calculadora solar y cómo evitamos que las comisiones de afiliación alteren las recomendaciones.">
+<link rel="canonical" href="https://estacionportatil.com/metodologia.html">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="assets/css/estilos.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://estacionportatil.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Metodología", "item": "https://estacionportatil.com/metodologia.html" }
+  ]
+}
+</script>
+</head>
+<body data-raiz="./">
+
+<header class="cabecera">
+  <div class="contenedor">
+    <a class="logotipo" href="./">
+      <svg class="icono" aria-hidden="true"><use href="assets/img/iconos.svg#i-zap"/></svg>
+      Estacionportatil
+    </a>
+    <button type="button" class="menu-boton" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu" id="menu-principal" aria-label="Navegación principal">
+      <details class="menu__grupo">
+        <summary>Herramientas</summary>
+        <div class="menu__lista">
+          <a href="index.html#calculadora">Calculadora de consumo</a>
+          <a href="comparativa.html">Comparativa 2026</a>
+        </div>
+      </details>
+      <details class="menu__grupo">
+        <summary>Guías</summary>
+        <div class="menu__lista">
+          <a href="index.html#guias">Todas las guías</a>
+          <a href="guias/ecoflow-delta-2-vs-bluetti-ac180.html">Delta 2 vs AC180</a>
+          <a href="guias/cuantos-paneles-solares-necesito.html">Cuántos paneles necesito</a>
+          <a href="guias/mejores-baterias-lifepo4-100ah.html">Baterías LiFePO4 100 Ah</a>
+          <a href="guias/instalacion-segura-kit-solar-12v.html">Instalación segura 12 V</a>
+        </div>
+      </details>
+      <a href="metodologia.html">Metodología</a>
+    </nav>
+    <a class="boton boton--verde" href="index.html#calculadora">
+      <svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-calculator"/></svg>
+      Calcular consumo
+    </a>
+  </div>
+</header>
+
+<main class="articulo">
+  <div class="contenedor contenedor--estrecho">
+    <nav class="migas" aria-label="Ruta de navegación">
+      <a href="./">Inicio</a>
+      <svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-chevron-right"/></svg>
+      <span>Metodología</span>
+    </nav>
+
+    <figure class="banda-foto">
+      <img alt="Placa electrónica interna de una estación de energía portátil, con el inversor y la etapa de control a la vista"
+           width="3840" height="2561" loading="lazy" decoding="async"
+           src="assets/img/foto/estacion-allpowers-1200.webp"
+           srcset="assets/img/foto/estacion-allpowers-800.webp 800w,
+                   assets/img/foto/estacion-allpowers-1200.webp 1200w,
+                   assets/img/foto/estacion-allpowers-1600.webp 1600w,
+                   assets/img/foto/estacion-allpowers-2400.webp 2400w"
+           sizes="(min-width: 1200px) 1120px, 100vw">
+      <figcaption>Las diferencias que importan entre dos estaciones casi siempre están aquí dentro, no en la ficha comercial.</figcaption>
+    </figure>
+
+    <h1>Cómo analizamos y qué no hacemos</h1>
+    <p class="intro" style="margin-left:0;text-align:left">Una web que gana dinero recomendando productos tiene que explicar cómo decide. Esta página es el contrato con quien nos lee.</p>
+
+    <h2>Cómo puntuamos una estación de energía</h2>
+    <p>La nota sobre 10 sale de cinco criterios con peso fijo. El peso está decidido de antemano y es el mismo para todos los modelos:</p>
+    <div class="tabla-envoltorio" style="margin-block:20px">
+      <table>
+        <thead><tr><th scope="col">Criterio</th><th scope="col">Peso</th><th scope="col">Qué medimos</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Coste por ciclo</th><td>30 %</td><td>Precio dividido entre kilovatios-hora que la batería entregará durante toda su vida útil.</td></tr>
+          <tr><th scope="row">Potencia útil</th><td>25 %</td><td>Salida continua y pico reales, y si arrancan cargas inductivas.</td></tr>
+          <tr><th scope="row">Capacidad y ampliación</th><td>20 %</td><td>Vatios-hora y si admite baterías adicionales.</td></tr>
+          <tr><th scope="row">Movilidad</th><td>15 %</td><td>Peso, formato y asas, penalizando por vatio-hora transportado.</td></tr>
+          <tr><th scope="row">Carga y software</th><td>10 %</td><td>Velocidad de carga, entrada solar máxima, calidad de la aplicación y función UPS.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Filtro previo: solo entran modelos con batería LiFePO4 y BMS con protecciones documentadas. Una estación de iones de litio NMC puede ser buena para uso esporádico, pero su coste por ciclo la deja fuera de nuestras recomendaciones.</p>
+
+    <h2>La fórmula de la calculadora</h2>
+    <p>La calculadora no inventa nada, aplica cuatro operaciones encadenadas:</p>
+    <ol>
+      <li><strong>Consumo diario:</strong> suma de vatios de cada aparato multiplicados por sus horas reales de funcionamiento. En el frigorífico pedimos horas de compresor en marcha, no horas enchufado, porque un compresor trabaja entre el 40 % y el 60 % del tiempo.</li>
+      <li><strong>Batería necesaria:</strong> consumo diario × días de autonomía ÷ (0,90 × 0,85). El 0,90 es la descarga útil que admite el LiFePO4 sin penalizar su vida; el 0,85 es el rendimiento típico de un inversor de onda senoidal pura incluyendo pérdidas de cableado.</li>
+      <li><strong>Panel necesario:</strong> consumo diario ÷ (horas de sol pico × 0,75). El 0,75 cubre pérdidas del regulador MPPT, temperatura de la célula y orientación no ideal, que es la situación normal en un techo de furgoneta.</li>
+      <li><strong>Pico de potencia:</strong> el aparato de mayor consumo con horas asignadas. Si supera la salida continua del modelo recomendado, la calculadora avisa.</li>
+    </ol>
+    <div class="aviso">
+      <svg class="icono icono--l" aria-hidden="true"><use href="assets/img/iconos.svg#i-triangle-alert"/></svg>
+      <p><strong>Límite honesto de la herramienta.</strong> Es una calculadora de dimensionado, no una medición. Los consumos son valores medios; el de tu frigorífico concreto puede desviarse un 30 %. Si vas a gastar más de mil euros, mide tu instalación con un vatímetro o un monitor de batería antes de comprar.</p>
+    </div>
+
+    <h2>Horas de sol pico que usamos</h2>
+    <p>Las cifras de radiación proceden del atlas europeo <a href="https://re.jrc.ec.europa.eu/pvg_tools/es/" rel="noopener" target="_blank">PVGIS</a> de la Comisión Europea. Redondeamos a la baja: preferimos que te sobre panel a que te falte en enero.</p>
+    <ul>
+      <li>Verano, sur de España: 6 horas de sol pico.</li>
+      <li>Verano, norte y Cantábrico: 4,8.</li>
+      <li>Media anual: 4. Es la opción por defecto y la que recomendamos para dimensionar.</li>
+      <li>Invierno, sur: 3. Invierno, norte: 2.</li>
+    </ul>
+
+    <h2>Cómo nos financiamos y qué implica</h2>
+    <p>Estacionportatil se financia con comisiones de afiliación: cuando compras a través de nuestros enlaces, la tienda nos paga un porcentaje y tú pagas exactamente el mismo precio. Para que eso no contamine el contenido aplicamos tres reglas:</p>
+    <ul>
+      <li>Las puntuaciones se cierran antes de comprobar qué programa de afiliación paga mejor.</li>
+      <li>Incluimos modelos sin programa de afiliación disponible si son los mejores de su categoría, aunque no nos den ningún ingreso.</li>
+      <li>Los inconvenientes de cada producto se escriben siempre, y en la misma pantalla que el botón de compra. Un análisis sin apartado «en contra» es publicidad.</li>
+    </ul>
+    <p>Todos los enlaces monetizados llevan el atributo <code>rel="sponsored"</code>, tal como exige Google, y están identificados con un aviso visible. Puedes leer el detalle en la <a href="legal/afiliados.html">política de afiliación</a>.</p>
+
+    <h2>Corrección de errores</h2>
+    <p>Las especificaciones cambian y a veces hay errores. Si detectas uno, escríbenos a <a data-legal-email href="#"><span data-legal="email"></span></a> y lo corregimos indicando la fecha. No borramos errores en silencio.</p>
+  </div>
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <div class="pie__legal" style="margin-top:0;border:0;padding-top:0">
+      <p style="margin:0">© 2026 Estacionportatil</p>
+      <nav aria-label="Enlaces legales">
+        <a href="legal/aviso-legal.html">Aviso legal</a>
+        <a href="legal/privacidad.html">Privacidad</a>
+        <a href="legal/cookies.html">Cookies</a>
+        <a href="legal/afiliados.html">Afiliación</a>
+        <a href="creditos.html">Créditos</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/datos.js"></script>
+<script src="assets/js/menu.js"></script>
+<script src="assets/js/legal.js"></script>
+<script src="assets/js/afiliados.js"></script>
+</body>
+</html>

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de consumo solar y mejores estaciones portátiles 2026 | Estacionportatil</title>
+<meta name="description" content="Calcula los vatios-hora que gastas al día y descubre qué estación de energía portátil y qué panel solar necesitas para tu camper, cabaña o respaldo en casa.">
+<link rel="canonical" href="https://estacionportatil.com/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Estacionportatil">
+<meta property="og:title" content="Calculadora de consumo solar y mejores estaciones portátiles 2026">
+<meta property="og:description" content="Dimensiona tu batería y tu panel solar en 30 segundos con datos de radiación reales de España.">
+<meta property="og:url" content="https://estacionportatil.com/">
+<meta property="og:image" content="https://estacionportatil.com/assets/img/og/tiendas-vialactea.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Tiendas de campaña iluminadas por dentro en un valle de montaña bajo la Vía Láctea">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="assets/fuentes/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fuentes/space-grotesk-variable.woff2" as="font" type="font/woff2" crossorigin>
+<!-- El preload replica el srcset para que el navegador adelante exactamente la
+     variante que va a usar y no descargue dos. -->
+<link rel="preload" as="image" type="image/webp"
+      href="assets/img/foto/tiendas-vialactea-1600.webp"
+      imagesrcset="assets/img/foto/tiendas-vialactea-800.webp 800w, assets/img/foto/tiendas-vialactea-1200.webp 1200w, assets/img/foto/tiendas-vialactea-1600.webp 1600w, assets/img/foto/tiendas-vialactea-2400.webp 2400w"
+      imagesizes="100vw">
+<link rel="stylesheet" href="assets/css/estilos.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://estacionportatil.com/#sitio",
+      "url": "https://estacionportatil.com/",
+      "name": "Estacionportatil",
+      "inLanguage": "es-ES",
+      "description": "Análisis independientes de energía solar portátil y sistemas off-grid."
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Calculadora de consumo solar",
+      "url": "https://estacionportatil.com/#calculadora",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Navegador web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuántos vatios-hora consume una furgoneta camper al día?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Una camper con frigorífico de compresor, luces LED, carga de móviles y portátil consume entre 600 y 900 Wh al día. Si añades placa de inducción o hervidor eléctrico, la cifra supera los 1.500 Wh." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué capacidad de batería necesito para mi consumo?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Divide tu consumo diario entre 0,76, que es el resultado de aplicar el 90 % de descarga útil del LiFePO4 y el 85 % de rendimiento del inversor. Para 800 Wh diarios necesitas una estación de al menos 1.050 Wh." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Merece la pena una estación de energía frente a instalar baterías a 12 V?",
+          "acceptedAnswer": { "@type": "Answer", "text": "La estación gana si no quieres tocar cableado, necesitas moverla o buscas respaldo doméstico. La instalación fija a 12 V con batería, regulador MPPT e inversor sale entre un 30 % y un 40 % más barata por vatio-hora, pero exige montaje y conocimientos de seguridad eléctrica." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué solo recomendáis baterías LiFePO4?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Por el coste por ciclo. Una estación de iones de litio NMC aguanta unos 800 ciclos hasta el 80 % de capacidad, mientras que una LiFePO4 pasa de 3.000. Aunque cueste un 20 % más, el coste por kilovatio-hora almacenado a lo largo de su vida se reduce a la tercera parte, y además tolera mejor el calor." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body data-raiz="./">
+
+<header class="cabecera">
+  <div class="contenedor">
+    <a class="logotipo" href="./">
+      <svg class="icono" aria-hidden="true"><use href="assets/img/iconos.svg#i-zap"/></svg>
+      Estacionportatil
+    </a>
+    <button type="button" class="menu-boton" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu" id="menu-principal" aria-label="Navegación principal">
+      <details class="menu__grupo">
+        <summary>Herramientas</summary>
+        <div class="menu__lista">
+          <a href="#calculadora">Calculadora de consumo</a>
+          <a href="comparativa.html">Comparativa 2026</a>
+        </div>
+      </details>
+      <details class="menu__grupo">
+        <summary>Guías</summary>
+        <div class="menu__lista">
+          <a href="#guias">Todas las guías</a>
+          <a href="guias/ecoflow-delta-2-vs-bluetti-ac180.html">Delta 2 vs AC180</a>
+          <a href="guias/cuantos-paneles-solares-necesito.html">Cuántos paneles necesito</a>
+          <a href="guias/mejores-baterias-lifepo4-100ah.html">Baterías LiFePO4 100 Ah</a>
+          <a href="guias/instalacion-segura-kit-solar-12v.html">Instalación segura 12 V</a>
+        </div>
+      </details>
+      <a href="metodologia.html">Metodología</a>
+    </nav>
+    <a class="boton boton--verde" href="#calculadora">
+      <svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-calculator"/></svg>
+      Calcular consumo
+    </a>
+  </div>
+</header>
+
+<main>
+  <!-- PORTADA: fotografía real + esquema eléctrico animado ----------------- -->
+  <section class="portada">
+    <img class="portada__foto" alt="" width="3840" height="2625" fetchpriority="high"
+         src="assets/img/foto/tiendas-vialactea-1600.webp"
+         srcset="assets/img/foto/tiendas-vialactea-800.webp 800w,
+                 assets/img/foto/tiendas-vialactea-1200.webp 1200w,
+                 assets/img/foto/tiendas-vialactea-1600.webp 1600w,
+                 assets/img/foto/tiendas-vialactea-2400.webp 2400w"
+         sizes="100vw">
+    <div class="contenedor">
+      <div class="portada__rejilla">
+        <div>
+          <h1>Calcula tu consumo real y acierta con el <span class="resalte">kit solar</span> a la primera</h1>
+          <p>Calculadora con datos de radiación de España, comparativas técnicas y guías de instalación para furgoneta camper, cabaña aislada y respaldo eléctrico en casa.</p>
+          <div class="acciones" style="justify-content:flex-start">
+            <a class="boton boton--naranja boton--grande" href="#calculadora">
+              <svg class="icono" aria-hidden="true"><use href="assets/img/iconos.svg#i-calculator"/></svg>
+              Ir a la calculadora
+            </a>
+            <a class="boton boton--fantasma boton--grande" href="comparativa.html">
+              <svg class="icono" aria-hidden="true"><use href="assets/img/iconos.svg#i-table-2"/></svg>
+              Ver comparativa 2026
+            </a>
+          </div>
+        </div>
+
+        <!-- Esquema de la cadena de energía. Dibujado a mano en SVG: pesa
+             menos de 3 KB, se ve nítido en cualquier pantalla y explica de un
+             vistazo de qué va el sitio. -->
+        <svg class="esquema" viewBox="0 0 460 300" role="img" aria-labelledby="titulo-esquema">
+          <title id="titulo-esquema">Cadena de energía de un sistema solar portátil: sol, panel, regulador MPPT, batería, inversor y consumos de la furgoneta</title>
+
+          <use class="esquema__icono esquema__icono--sol" href="assets/img/iconos.svg#i-sun" x="63" y="4" width="24" height="24"/>
+          <path class="esquema__cable esquema__cable--sol" d="M75 32 V44"/>
+
+          <rect class="esquema__caja esquema__caja--activa" x="22" y="44" width="104" height="60" rx="10"/>
+          <use class="esquema__icono" href="assets/img/iconos.svg#i-sun-medium" x="34" y="63" width="22" height="22"/>
+          <text class="esquema__rotulo" x="64" y="68">Panel</text>
+          <text class="esquema__valor" x="64" y="87">440 <tspan class="esquema__unidad">Wp</tspan></text>
+
+          <path class="esquema__cable" d="M126 74 H152"/>
+
+          <rect class="esquema__caja" x="152" y="44" width="104" height="60" rx="10"/>
+          <use class="esquema__icono" href="assets/img/iconos.svg#i-gauge" x="164" y="63" width="22" height="22"/>
+          <text class="esquema__rotulo" x="188" y="68">Regulador</text>
+          <text class="esquema__valor" x="188" y="87">MPPT</text>
+
+          <path class="esquema__cable" d="M256 74 H282"/>
+
+          <rect class="esquema__caja esquema__caja--activa" x="282" y="44" width="156" height="60" rx="10"/>
+          <use class="esquema__icono" href="assets/img/iconos.svg#i-battery-full" x="294" y="63" width="22" height="22"/>
+          <text class="esquema__rotulo" x="322" y="68">Batería LiFePO4</text>
+          <text class="esquema__valor" x="322" y="87">1.024 <tspan class="esquema__unidad">Wh</tspan></text>
+
+          <path class="esquema__cable" d="M360 104 V196"/>
+
+          <rect class="esquema__caja" x="282" y="196" width="156" height="60" rx="10"/>
+          <use class="esquema__icono" href="assets/img/iconos.svg#i-plug-zap" x="294" y="215" width="22" height="22"/>
+          <text class="esquema__rotulo" x="322" y="220">Inversor 230 V</text>
+          <text class="esquema__valor" x="322" y="239">1.800 <tspan class="esquema__unidad">W</tspan></text>
+
+          <path class="esquema__cable" d="M282 226 H248"/>
+
+          <rect class="esquema__caja" x="22" y="196" width="70" height="60" rx="10"/>
+          <use class="esquema__icono" href="assets/img/iconos.svg#i-refrigerator" x="46" y="203" width="22" height="22"/>
+          <text class="esquema__rotulo" x="57" y="242" text-anchor="middle">Nevera</text>
+
+          <rect class="esquema__caja" x="100" y="196" width="70" height="60" rx="10"/>
+          <use class="esquema__icono" href="assets/img/iconos.svg#i-laptop" x="124" y="203" width="22" height="22"/>
+          <text class="esquema__rotulo" x="135" y="242" text-anchor="middle">Portátil</text>
+
+          <rect class="esquema__caja" x="178" y="196" width="70" height="60" rx="10"/>
+          <use class="esquema__icono" href="assets/img/iconos.svg#i-lightbulb" x="202" y="203" width="22" height="22"/>
+          <text class="esquema__rotulo" x="213" y="242" text-anchor="middle">Luces</text>
+
+          <text class="esquema__rotulo" x="22" y="284">Cadena de energía de un sistema off-grid</text>
+        </svg>
+      </div>
+
+      <div class="confianza">
+        <span><svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-shield-check"/></svg> Metodología pública</span>
+        <span><svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-battery-charging"/></svg> Solo baterías LiFePO4</span>
+        <span><svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-sun-medium"/></svg> Radiación real de PVGIS</span>
+        <span><svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-scale"/></svg> Pros y contras siempre</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULADORA ---------------------------------------------------------- -->
+  <section class="seccion seccion--blanca" id="calculadora">
+    <div class="contenedor contenedor--estrecho">
+      <div class="centrado encabezado-seccion">
+        <h2>Calculadora de consumo y dimensionado solar</h2>
+        <p class="intro">Mueve las horas de uso de cada aparato. Calculamos el consumo diario, la capacidad de batería con las pérdidas reales del sistema y los vatios-pico de panel que necesitas.</p>
+      </div>
+
+      <div class="panel">
+        <div class="selector">
+          <div>
+            <label for="zona-solar">Radiación solar de referencia</label>
+            <select id="zona-solar">
+              <option value="verano-sur">Verano · sur de España (6 HSP)</option>
+              <option value="verano-norte">Verano · norte y Cantábrico (4,8 HSP)</option>
+              <option value="media-anual" selected>Media anual (4 HSP)</option>
+              <option value="invierno-sur">Invierno · sur de España (3 HSP)</option>
+              <option value="invierno-norte">Invierno · norte y Cantábrico (2 HSP)</option>
+            </select>
+          </div>
+          <div>
+            <label for="dias-autonomia">Días sin sol que quieres aguantar</label>
+            <select id="dias-autonomia">
+              <option value="1" selected>1 día</option>
+              <option value="2">2 días</option>
+              <option value="3">3 días</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="lista-dispositivos"></div>
+
+        <dl class="resultado">
+          <div>
+            <dt><svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-gauge"/></svg> Consumo diario estimado</dt>
+            <dd><span class="cifra" id="consumo-wh">0</span> <span>Wh/día</span></dd>
+            <dt><svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-cable"/></svg> Equivalente a 12 V</dt>
+            <dd id="consumo-ah">0 Ah</dd>
+            <dt><svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-battery-full"/></svg> Batería mínima con pérdidas</dt>
+            <dd id="bateria-wh">0 Wh útiles</dd>
+            <dt><svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-sun"/></svg> Panel solar necesario</dt>
+            <dd id="panel-wp">0 Wp</dd>
+          </div>
+          <div class="recomendacion">
+            <span class="marco-icono marco-icono--oscuro"><svg class="icono icono--l" aria-hidden="true"><use href="assets/img/iconos.svg#i-plug-zap"/></svg></span>
+            <h3 id="producto-nombre">—</h3>
+            <p id="producto-resumen">—</p>
+            <a class="boton boton--naranja" id="producto-enlace" data-producto="">
+              Ver ficha y precio
+              <svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-arrow-right"/></svg>
+            </a>
+          </div>
+        </dl>
+
+        <p class="nota-tabla">El cálculo aplica un 90 % de descarga útil (propio del LiFePO4), un 85 % de rendimiento del inversor y un 75 % de rendimiento fotovoltaico. Es una estimación de dimensionado, no una medición: <a href="metodologia.html">aquí está la fórmula completa</a>.</p>
+      </div>
+
+      <p class="divulgacion">
+        <svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-info"/></svg>
+        <span>Los botones de compra son enlaces de afiliado. Si compras a través de ellos podemos recibir una comisión sin coste adicional para ti, y eso no cambia el orden de nuestras recomendaciones. <a href="legal/afiliados.html">Cómo nos financiamos</a>.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- COMPARATIVA RESUMIDA ------------------------------------------------- -->
+  <section class="seccion">
+    <div class="contenedor">
+      <figure class="banda-foto">
+        <img alt="Tienda de campaña iluminada desde dentro en una llanura de alta montaña, bajo un cielo completamente estrellado"
+             width="3840" height="2486" loading="lazy" decoding="async"
+             src="assets/img/foto/acampada-deosai-1200.webp"
+             srcset="assets/img/foto/acampada-deosai-800.webp 800w,
+                     assets/img/foto/acampada-deosai-1200.webp 1200w,
+                     assets/img/foto/acampada-deosai-1600.webp 1600w,
+                     assets/img/foto/acampada-deosai-2400.webp 2400w"
+             sizes="(min-width: 1200px) 1120px, 100vw">
+        <figcaption>Autonomía eléctrica real: luz, nevera y portátil durante días sin enchufe. De eso trata elegir bien la batería.</figcaption>
+      </figure>
+
+      <div class="centrado encabezado-seccion" style="margin-top:56px">
+        <h2>Las mejores estaciones de energía portátiles de 2026</h2>
+        <p class="intro">Solo incluimos modelos con batería LiFePO4: duran entre tres y cinco veces más ciclos que las de iones de litio clásicas y toleran mejor el calor de una furgoneta en verano.</p>
+      </div>
+
+      <div class="tabla-envoltorio">
+        <table>
+          <thead>
+            <tr><th scope="col">Modelo</th><th scope="col">Capacidad</th><th scope="col">Salida</th><th scope="col">Ciclos</th><th scope="col">Peso</th><th scope="col">Nota</th><th scope="col"></th></tr>
+          </thead>
+          <tbody>
+            <tr class="destacada">
+              <th scope="row">
+                <span class="fila"><svg class="icono" aria-hidden="true" style="color:var(--ambar-500)"><use href="assets/img/iconos.svg#i-trophy"/></svg> EcoFlow Delta 2</span>
+                <small>Mejor equilibrio general</small>
+              </th>
+              <td>1.024 Wh</td><td>1.800 W<small>pico 2.700 W</small></td><td>3.000 al 80 %</td><td>12 kg</td>
+              <td><span class="puntuacion">9,6<span>/10</span></span></td>
+              <td><a class="boton boton--verde boton--mini" data-producto="ecoflow-delta-2">Ver precio</a></td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <span class="fila"><svg class="icono" aria-hidden="true" style="color:var(--tinta-suave)"><use href="assets/img/iconos.svg#i-medal"/></svg> Bluetti AC180</span>
+                <small>Más capacidad por euro</small>
+              </th>
+              <td>1.152 Wh</td><td>1.800 W<small>pico 2.700 W</small></td><td>3.500 al 80 %</td><td>16 kg</td>
+              <td><span class="puntuacion">9,4<span>/10</span></span></td>
+              <td><a class="boton boton--contorno boton--mini" data-producto="bluetti-ac180">Ver precio</a></td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <span class="fila"><svg class="icono" aria-hidden="true" style="color:#b45309"><use href="assets/img/iconos.svg#i-award"/></svg> Jackery Explorer 1000 Plus</span>
+                <small>Más ciclos y ampliable a 5 kWh</small>
+              </th>
+              <td>1.264 Wh</td><td>2.000 W<small>pico 4.000 W</small></td><td>4.000 al 70 %</td><td>14,5 kg</td>
+              <td><span class="puntuacion">9,2<span>/10</span></span></td>
+              <td><a class="boton boton--contorno boton--mini" data-producto="jackery-1000-plus">Ver precio</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="nota-tabla">Especificaciones según ficha de fabricante. <a href="comparativa.html">Ver la comparativa completa con cinco modelos, pros y contras</a>.</p>
+    </div>
+  </section>
+
+  <!-- GUÍAS ---------------------------------------------------------------- -->
+  <section class="seccion seccion--blanca" id="guias">
+    <div class="contenedor">
+      <div class="centrado encabezado-seccion">
+        <h2>Guías y análisis técnicos</h2>
+        <p class="intro">Todo lo que hay que entender antes de gastar mil euros en una batería.</p>
+      </div>
+
+      <div class="rejilla">
+        <a class="tarjeta tarjeta--enlace" href="guias/ecoflow-delta-2-vs-bluetti-ac180.html">
+          <img class="tarjeta__foto" alt="Estación de energía portátil con un ordenador portátil conectado por cable a una de sus salidas"
+               width="3654" height="2690" loading="lazy" decoding="async"
+               src="assets/img/foto/estacion-goalzero-480.webp"
+               srcset="assets/img/foto/estacion-goalzero-480.webp 480w, assets/img/foto/estacion-goalzero-800.webp 800w, assets/img/foto/estacion-goalzero-1200.webp 1200w"
+               sizes="(min-width: 1024px) 270px, (min-width: 640px) 45vw, 92vw">
+          <span class="etiqueta">Comparativa</span>
+          <h3>EcoFlow Delta 2 vs Bluetti AC180: cuál comprar</h3>
+          <p>Dos estaciones casi idénticas sobre el papel que se comportan de forma muy distinta en uso real.</p>
+          <span class="meta">8 min de lectura <strong>Leer <svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-arrow-right"/></svg></strong></span>
+        </a>
+        <a class="tarjeta tarjeta--enlace" href="guias/cuantos-paneles-solares-necesito.html">
+          <img class="tarjeta__foto" alt="Hileras de paneles solares fotovoltaicos montados sobre estructura metálica en un terreno llano"
+               width="3840" height="2550" loading="lazy" decoding="async"
+               src="assets/img/foto/planta-solar-480.webp"
+               srcset="assets/img/foto/planta-solar-480.webp 480w, assets/img/foto/planta-solar-800.webp 800w, assets/img/foto/planta-solar-1200.webp 1200w"
+               sizes="(min-width: 1024px) 270px, (min-width: 640px) 45vw, 92vw">
+          <span class="etiqueta">Cálculo solar</span>
+          <h3>Cuántos paneles solares necesito de verdad</h3>
+          <p>La fórmula con horas de sol pico de España y los tres errores que arruinan el dimensionado.</p>
+          <span class="meta">7 min de lectura <strong>Leer <svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-arrow-right"/></svg></strong></span>
+        </a>
+        <a class="tarjeta tarjeta--enlace" href="guias/mejores-baterias-lifepo4-100ah.html">
+          <img class="tarjeta__foto" alt="Banco de celdas prismáticas de litio-ferrofosfato unidas en paralelo con pletinas de cobre"
+               width="3264" height="2448" loading="lazy" decoding="async"
+               src="assets/img/foto/celdas-lifepo4-480.webp"
+               srcset="assets/img/foto/celdas-lifepo4-480.webp 480w, assets/img/foto/celdas-lifepo4-800.webp 800w, assets/img/foto/celdas-lifepo4-1200.webp 1200w"
+               sizes="(min-width: 1024px) 270px, (min-width: 640px) 45vw, 92vw">
+          <span class="etiqueta">Guía de baterías</span>
+          <h3>Baterías LiFePO4 de 100 Ah: qué mirar antes de comprar</h3>
+          <p>BMS, corriente de descarga, carga a baja temperatura y por qué el precio por ciclo manda.</p>
+          <span class="meta">9 min de lectura <strong>Leer <svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-arrow-right"/></svg></strong></span>
+        </a>
+        <a class="tarjeta tarjeta--enlace" href="guias/instalacion-segura-kit-solar-12v.html">
+          <img class="tarjeta__foto" alt="Operario con casco trabajando agachado sobre una cubierta durante una instalación solar"
+               width="3324" height="1871" loading="lazy" decoding="async"
+               src="assets/img/foto/instalador-tejado-480.webp"
+               srcset="assets/img/foto/instalador-tejado-480.webp 480w, assets/img/foto/instalador-tejado-800.webp 800w, assets/img/foto/instalador-tejado-1200.webp 1200w"
+               sizes="(min-width: 1024px) 270px, (min-width: 640px) 45vw, 92vw">
+          <span class="etiqueta">Seguridad</span>
+          <h3>Instalar un kit solar de 12 V sin jugártela</h3>
+          <p>Sección de cable, fusibles, orden de conexión y los fallos que provocan incendios en camper.</p>
+          <span class="meta">10 min de lectura <strong>Leer <svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-arrow-right"/></svg></strong></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES -------------------------------------------------- -->
+  <section class="seccion">
+    <div class="contenedor contenedor--estrecho">
+      <h2 class="centrado encabezado-seccion">Preguntas frecuentes</h2>
+      <details>
+        <summary>¿Cuántos vatios-hora consume una furgoneta camper al día? <svg class="icono" aria-hidden="true"><use href="assets/img/iconos.svg#i-chevron-down"/></svg></summary>
+        <p>Una camper con frigorífico de compresor, luces LED, carga de móviles y portátil se mueve entre 600 y 900 Wh diarios. En cuanto entra una placa de inducción o un hervidor eléctrico, el consumo supera los 1.500 Wh y el dimensionado cambia por completo.</p>
+      </details>
+      <details>
+        <summary>¿Qué capacidad de batería necesito para mi consumo? <svg class="icono" aria-hidden="true"><use href="assets/img/iconos.svg#i-chevron-down"/></svg></summary>
+        <p>Divide tu consumo diario entre 0,76: es el resultado de combinar el 90 % de descarga útil que admite el LiFePO4 con el 85 % de rendimiento del inversor. Para 800 Wh al día necesitas una estación de 1.050 Wh como mínimo.</p>
+      </details>
+      <details>
+        <summary>¿Merece la pena una estación de energía o mejor baterías a 12 V? <svg class="icono" aria-hidden="true"><use href="assets/img/iconos.svg#i-chevron-down"/></svg></summary>
+        <p>La estación gana si no quieres tocar cableado, necesitas moverla o buscas respaldo doméstico ante apagones. Una instalación fija con batería, regulador MPPT e inversor sale entre un 30 % y un 40 % más barata por vatio-hora, pero exige montaje y criterio de seguridad eléctrica.</p>
+      </details>
+      <details>
+        <summary>¿Por qué solo recomendáis baterías LiFePO4? <svg class="icono" aria-hidden="true"><use href="assets/img/iconos.svg#i-chevron-down"/></svg></summary>
+        <p>Porque el coste por ciclo es mucho mejor. Una estación de iones de litio NMC aguanta unos 800 ciclos hasta el 80 % de su capacidad; una LiFePO4 pasa de 3.000. Aunque cueste un 20 % más, el coste por kilovatio-hora almacenado a lo largo de su vida se reduce a la tercera parte. Además tolera mejor el calor de un vehículo aparcado al sol.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <div class="rejilla">
+      <div>
+        <span class="logotipo">
+          <svg class="icono" aria-hidden="true"><use href="assets/img/iconos.svg#i-zap"/></svg>
+          Estacionportatil
+        </span>
+        <p style="margin:0">Análisis independientes de energía solar portátil, autoconsumo y soluciones off-grid para vehículos, cabañas y respaldo doméstico.</p>
+      </div>
+      <div>
+        <h4>Contenidos</h4>
+        <ul>
+          <li><a href="#calculadora"><svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-calculator"/></svg> Calculadora de consumo</a></li>
+          <li><a href="comparativa.html"><svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-table-2"/></svg> Comparativa 2026</a></li>
+          <li><a href="#guias"><svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-book-open"/></svg> Guías y análisis</a></li>
+          <li><a href="metodologia.html"><svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-shield-check"/></svg> Cómo analizamos</a></li>
+          <li><a href="creditos.html"><svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-file-text"/></svg> Créditos de imágenes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aviso de afiliación</h4>
+        <p style="margin:0">Estacionportatil participa en programas de afiliación. Como Afiliado de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables. Las comisiones no influyen en el orden de las recomendaciones.</p>
+      </div>
+    </div>
+    <div class="pie__legal">
+      <p style="margin:0">© 2026 Estacionportatil</p>
+      <nav aria-label="Enlaces legales">
+        <a href="legal/aviso-legal.html">Aviso legal</a>
+        <a href="legal/privacidad.html">Privacidad</a>
+        <a href="legal/cookies.html">Cookies</a>
+        <a href="legal/afiliados.html">Afiliación</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/datos.js"></script>
+<script src="assets/js/menu.js"></script>
+<script src="assets/js/afiliados.js"></script>
+<script src="assets/js/calculadora.js"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instalar un kit solar de 12 V sin jugártela: orden, cable y fusibles | Estacionportatil</title>
+<meta name="description" content="Orden correcto de conexión, sección de cable por corriente y longitud, fusibles obligatorios, terminales prensados y los fallos que provocan incendios en una instalación de 12 V.">
+<link rel="canonical" href="https://estacionportatil.com/guias/instalacion-segura-kit-solar-12v.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Estacionportatil">
+<meta property="og:title" content="Instalar un kit solar de 12 V sin jugártela">
+<meta property="og:image" content="https://estacionportatil.com/assets/img/og/instalador-tejado.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:description" content="Guía de seguridad eléctrica para montar batería, regulador, panel e inversor en una camper o cabaña sin provocar un incendio.">
+<meta property="og:url" content="https://estacionportatil.com/guias/instalacion-segura-kit-solar-12v.html">
+<link rel="preload" href="../assets/fuentes/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/estilos.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Instalar un kit solar de 12 V sin jugártela",
+      "description": "Guía de seguridad para instalar un sistema solar de 12 V: orden de conexión, cálculo de sección de cable, fusibles, terminales, fijación de la batería y línea de 230 V.",
+      "image": "https://estacionportatil.com/assets/img/foto/instalador-tejado-1200.webp",
+      "inLanguage": "es-ES",
+      "datePublished": "2026-04-22",
+      "dateModified": "2026-09-15",
+      "author": { "@type": "Organization", "name": "Estacionportatil", "url": "https://estacionportatil.com/metodologia.html" },
+      "publisher": { "@type": "Organization", "name": "Estacionportatil" },
+      "mainEntityOfPage": "https://estacionportatil.com/guias/instalacion-segura-kit-solar-12v.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://estacionportatil.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Guías", "item": "https://estacionportatil.com/#guias" },
+        { "@type": "ListItem", "position": 3, "name": "Instalar un kit solar de 12 V sin jugártela", "item": "https://estacionportatil.com/guias/instalacion-segura-kit-solar-12v.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Se conecta primero el panel o la batería al regulador?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Primero la batería y después el panel. El regulador necesita la tensión de la batería para arrancar y para detectar si el sistema es de 12 o de 24 V; alimentado solo desde el panel puede detectar mal el sistema o dañarse. Para desconectar se hace al contrario: primero el panel, luego la batería." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde se coloca el fusible principal de la batería?",
+          "acceptedAnswer": { "@type": "Answer", "text": "En el polo positivo, a menos de 20 cm del borne. El tramo de cable que queda entre el borne y el fusible no está protegido por nada, y un cortocircuito ahí libera cientos o miles de amperios sin que nada lo corte, con el cable al rojo en segundos." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué sección de cable necesito para 30 A a 12 V?",
+          "acceptedAnswer": { "@type": "Answer", "text": "6 mm² para una tirada corta, de hasta metro y medio por polo. Si el recorrido total de ida y vuelta pasa de tres metros hay que subir de sección para mantener la caída de tensión por debajo del 3 %, que a 12 V son solo 0,36 V." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué no vale cable de aluminio en una instalación de 12 V?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Porque conduce alrededor de un 60 % de lo que conduce el cobre, se deforma en frío bajo la presión del terminal y acaba aflojando la conexión, y su óxido superficial es aislante. En un sistema de baja tensión y alta corriente esas tres cosas juntas terminan en un punto caliente." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body data-raiz="../">
+
+<header class="cabecera">
+  <div class="contenedor">
+    <a class="logotipo" href="../">
+      <svg class="icono" aria-hidden="true"><use href="../assets/img/iconos.svg#i-zap"/></svg>
+      Estacionportatil
+    </a>
+    <button type="button" class="menu-boton" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu" id="menu-principal" aria-label="Navegación principal">
+      <details class="menu__grupo">
+        <summary>Herramientas</summary>
+        <div class="menu__lista">
+          <a href="../index.html#calculadora">Calculadora de consumo</a>
+          <a href="../comparativa.html">Comparativa 2026</a>
+        </div>
+      </details>
+      <details class="menu__grupo">
+        <summary>Guías</summary>
+        <div class="menu__lista">
+          <a href="../index.html#guias">Todas las guías</a>
+          <a href="../guias/ecoflow-delta-2-vs-bluetti-ac180.html">Delta 2 vs AC180</a>
+          <a href="../guias/cuantos-paneles-solares-necesito.html">Cuántos paneles necesito</a>
+          <a href="../guias/mejores-baterias-lifepo4-100ah.html">Baterías LiFePO4 100 Ah</a>
+          <a href="../guias/instalacion-segura-kit-solar-12v.html">Instalación segura 12 V</a>
+        </div>
+      </details>
+      <a href="../metodologia.html">Metodología</a>
+    </nav>
+    <a class="boton boton--verde" href="../index.html#calculadora">
+      <svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-calculator"/></svg>
+      Calcular consumo
+    </a>
+  </div>
+</header>
+
+<main class="articulo articulo--guia">
+  <div class="contenedor contenedor--estrecho">
+    <nav class="migas" aria-label="Ruta de navegación">
+      <a href="../">Inicio</a>
+      <svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-chevron-right"/></svg>
+      <a href="../index.html#guias">Guías</a>
+      <svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-chevron-right"/></svg>
+      <span>Instalación segura de un kit solar de 12 V</span>
+    </nav>
+
+    <figure class="banda-foto banda-foto--panoramica">
+      <img alt="Operario con casco trabajando agachado sobre una cubierta durante una instalación solar"
+           width="3324" height="1871" loading="lazy" decoding="async"
+           src="../assets/img/foto/instalador-tejado-1200.webp"
+           srcset="../assets/img/foto/instalador-tejado-800.webp 800w,
+                   ../assets/img/foto/instalador-tejado-1200.webp 1200w,
+                   ../assets/img/foto/instalador-tejado-1600.webp 1600w,
+                   ../assets/img/foto/instalador-tejado-2400.webp 2400w"
+           sizes="(min-width: 1200px) 1120px, 100vw">
+    </figure>
+
+    <h1>Instalar un kit solar de 12 V sin jugártela</h1>
+    <p class="intro" style="margin-left:0;text-align:left">Doce voltios suenan inofensivos y no dan calambre, pero una batería de litio de 100 Ah puede entregar cientos de amperios en un cortocircuito. Lo que quema una furgoneta no es la tensión: es la corriente por un cable demasiado fino.</p>
+
+    <p class="divulgacion">
+      <svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-info"/></svg>
+      <span>Esta guía contiene enlaces de afiliado: si compras a través de ellos recibimos una comisión sin coste adicional para ti, y no cambia lo que recomendamos. <a href="../legal/afiliados.html">Cómo nos financiamos</a>.</span>
+    </p>
+
+    <div class="aviso">
+      <svg class="icono icono--l" aria-hidden="true"><use href="../assets/img/iconos.svg#i-triangle-alert"/></svg>
+      <p><strong>Contenido informativo.</strong> Explicamos criterios técnicos generales, no un proyecto de instalación. Cualquier trabajo sobre la línea de 230 V de una vivienda o de un vehículo, y en general todo lo que quede aguas abajo de un inversor, puede requerir un instalador autorizado y su certificado. Si dudas sobre la parte de corriente alterna, no improvises: consulta a un profesional.</p>
+    </div>
+
+    <div class="indice">
+      <strong><svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-list-checks"/></svg> Contenido</strong>
+      <ol>
+        <li><a href="#orden">Orden correcto de conexión</a></li>
+        <li><a href="#seccion">Sección de cable por corriente y longitud</a></li>
+        <li><a href="#fusibles">Fusibles: dónde y por qué</a></li>
+        <li><a href="#terminales">Terminales y por qué el aluminio no vale</a></li>
+        <li><a href="#bateria">Ventilación y fijación de la batería</a></li>
+        <li><a href="#230v">La línea de 230 V del inversor</a></li>
+        <li><a href="#incendios">Los cuatro fallos que provocan incendios</a></li>
+        <li><a href="#alternativa">La alternativa sin cableado</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ol>
+    </div>
+
+    <h2 id="orden">Orden correcto de conexión</h2>
+    <p>El regulador se alimenta de la batería y necesita ver su tensión para saber si trabaja a 12 o a 24 V. Conectado primero al panel, algunos modelos detectan mal el sistema y otros se dañan, porque la tensión de circuito abierto llega sin nada que la absorba. El orden no es una recomendación, es una secuencia:</p>
+    <ol>
+      <li>Fija todo mecánicamente antes de conectar nada y comprueba la polaridad con un multímetro, no por el color del cable.</li>
+      <li>Deja el fusible principal fuera de su soporte o el magnetotérmico abierto.</li>
+      <li>Conecta <strong>batería → regulador</strong>, negativo primero. Inserta el fusible: el regulador debe encenderse y mostrar la tensión de batería.</li>
+      <li>Conecta <strong>panel → regulador</strong>. Tapa el panel o deja un conector MC4 sin unir mientras trabajas: un panel al sol siempre está en tensión.</li>
+      <li>Conecta el inversor <strong>directamente a la batería</strong> con su propio fusible, nunca a la salida de consumo del regulador, dimensionada para unos pocos amperios.</li>
+    </ol>
+    <p>Para desconectar, al revés: primero el panel, después el inversor y los consumos, y la batería al final.</p>
+
+    <h2 id="seccion">Sección de cable por corriente y longitud</h2>
+    <p>A 12 V, el margen de caída de tensión aceptable es del 3 %: <strong>0,36 V en todo el recorrido</strong>. Es muy poco, y por eso las secciones de un sistema de baja tensión parecen exageradas al lado de una instalación doméstica. Se calcula con la resistividad del cobre:</p>
+    <div class="destacado">
+      <svg class="icono icono--l" aria-hidden="true"><use href="../assets/img/iconos.svg#i-ruler"/></svg>
+      <p><strong>Caída (V) = 2 × longitud (m) × corriente (A) × 0,0175 ÷ sección (mm²)</strong><br>La longitud es la del recorrido de ida; el 2 cuenta el retorno por el negativo.</p>
+    </div>
+    <div class="tabla-envoltorio" style="margin-block:20px">
+      <table>
+        <thead><tr><th scope="col">Corriente a 12 V</th><th scope="col">Sección mínima</th><th scope="col">Ejemplo típico</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><span class="fila"><svg class="icono" aria-hidden="true" style="color:var(--verde-500)"><use href="../assets/img/iconos.svg#i-cable"/></svg> 10 A</span></th><td><strong>2,5 mm²</strong></td><td>Luces LED, bomba de agua, ventilador</td></tr>
+          <tr><th scope="row"><span class="fila"><svg class="icono" aria-hidden="true" style="color:var(--verde-500)"><use href="../assets/img/iconos.svg#i-cable"/></svg> 20 A</span></th><td><strong>4 mm²</strong></td><td>Panel de 220 W hacia el regulador</td></tr>
+          <tr><th scope="row"><span class="fila"><svg class="icono" aria-hidden="true" style="color:var(--verde-500)"><use href="../assets/img/iconos.svg#i-cable"/></svg> 30 A</span></th><td><strong>6 mm²</strong></td><td>Salida de un MPPT de 30 A a la batería</td></tr>
+          <tr><th scope="row"><span class="fila"><svg class="icono" aria-hidden="true" style="color:var(--verde-500)"><use href="../assets/img/iconos.svg#i-cable"/></svg> 50 A</span></th><td><strong>10 mm²</strong></td><td>Cargador de batería del alternador</td></tr>
+          <tr class="destacada"><th scope="row"><span class="fila"><svg class="icono" aria-hidden="true" style="color:var(--naranja-500)"><use href="../assets/img/iconos.svg#i-plug-zap"/></svg> 100 A</span></th><td><strong>25 mm²</strong></td><td>Inversor de 1.000 W</td></tr>
+          <tr class="destacada"><th scope="row"><span class="fila"><svg class="icono" aria-hidden="true" style="color:var(--naranja-500)"><use href="../assets/img/iconos.svg#i-plug-zap"/></svg> 150 A</span></th><td><strong>35 mm²</strong></td><td>Inversor de 1.500-2.000 W</td></tr>
+        </tbody>
+      </table>
+      <p class="nota-tabla">Valores orientativos para tiradas cortas, de hasta metro y medio por polo (unos 3 m de cable contando ida y retorno). Si el recorrido total supera esos 3 metros, sube un escalón de sección por cada duplicación de longitud y vuelve a comprobar la caída con la fórmula.</p>
+    </div>
+    <p>Dos matices: calcula con la corriente máxima real, no con la media, y deja margen si el cable va en un mueble cerrado o agrupado, porque disipa peor. Usa cobre estañado flexible de muchos hilos finos, no el rígido doméstico: con la vibración de un vehículo, el hilo rígido acaba rompiendo.</p>
+
+    <h2 id="fusibles">Fusibles: dónde y por qué</h2>
+    <p>La regla que lo resume: <strong>un fusible no protege al aparato, protege al cable</strong>. Su calibre va por encima del consumo normal del circuito y por debajo de lo que el cable aguanta sin calentarse.</p>
+    <ul>
+      <li><strong>Fusible principal en el positivo de la batería, a menos de 20 cm del borne.</strong> El tramo entre borne y fusible es el único de la instalación que no está protegido por nada. Un tornillo que roce ese cable contra el chasis provoca un cortocircuito directo a batería, con cientos de amperios en las de litio y miles en las de plomo: el cable se pone al rojo en segundos y el aislante arde. Para estas corrientes se usan portafusibles MEGA, ANL o clase T.</li>
+      <li><strong>Fusible propio en la línea del panel</strong>, entre panel y regulador, dimensionado a la corriente de cortocircuito del panel más un margen.</li>
+      <li><strong>Fusible propio en la línea del inversor</strong>, el consumidor de más corriente de la instalación, lo más cerca posible de la batería.</li>
+      <li><strong>Fusibles individuales por circuito</strong> en una caja de distribución: luces, bomba, nevera, cargadores.</li>
+    </ul>
+    <p>Si prefieres magnetotérmicos, tienen que ser específicos para corriente continua. Uno de alterna no extingue bien el arco en continua y puede quedarse cerrado justo cuando lo necesitas.</p>
+
+    <h2 id="terminales">Terminales y por qué el aluminio no vale</h2>
+    <p>Los terminales de sección grande se prensan con crimpadora hidráulica o de trinquete, con la matriz de su sección, y se protegen con tubo termorretráctil. Un terminal retorcido a mano o apretado con alicates parece sujetar, pero deja microhuecos: eso es resistencia, y resistencia con 100 A de paso es calor concentrado en un punto. Tampoco sirve estañarlo con soldador: el estaño fluye en frío bajo la presión del tornillo y el hilo queda rígido justo donde más vibra.</p>
+    <p>El aluminio queda fuera por tres razones acumuladas: conduce alrededor de un 60 % de lo que conduce el cobre, se deforma en frío bajo la presión del terminal y acaba aflojando la unión, y su óxido superficial es aislante, al contrario que el del cobre. Cobre estañado, siempre.</p>
+
+    <h2 id="bateria">Ventilación y fijación de la batería</h2>
+    <p>Una LiFePO4 no emite hidrógeno como una de plomo abierta, pero sigue necesitando disipar calor: no la encajes sin holgura ni la tapes con aislante térmico. Si es de plomo-ácido abierta, la ventilación al exterior es obligatoria, porque el hidrógeno que desprende al cargar es explosivo.</p>
+    <div class="aviso">
+      <svg class="icono icono--l" aria-hidden="true"><use href="../assets/img/iconos.svg#i-circle-alert"/></svg>
+      <p><strong>La fijación mecánica no es opcional.</strong> Una batería de 12 kg sin sujetar es un proyectil en un frenazo o un vuelco. Va en un cajón o caja con brida metálica atornillada a un elemento estructural, no apoyada bajo un asiento ni con una correa elástica.</p>
+    </div>
+    <p>Protege los bornes con las tapas que trae la batería o una caja cerrada: basta una llave que caiga entre los dos polos para provocar un arco que funde el metal.</p>
+
+    <h2 id="230v">La línea de 230 V del inversor</h2>
+    <p>En cuanto entra un inversor tienes dos instalaciones conviviendo en el mismo mueble. La de 230 V se tiende separada de la de 12 V, con su propia canalización y sin compartir pasos con los cables de continua, para que un roce no mezcle los dos sistemas.</p>
+    <p>Esa línea lleva su propia protección diferencial y magnetotérmica, y sus tomas deben ser inequívocamente de 230 V para que nadie enchufe ahí un aparato de 12 V. Nunca conectes la salida del inversor a la instalación fija sin un conmutador que impida que coincida con la red: si el inversor y la red se encuentran, en el mejor de los casos pierdes el inversor. Aquí es donde conviene un instalador autorizado.</p>
+
+    <h2 id="incendios">Los cuatro fallos que provocan incendios</h2>
+    <div class="balance">
+      <div class="balance--contras">
+        <h4><svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-triangle-alert"/></svg> Lo que hay detrás de casi todos los casos</h4>
+        <ul>
+          <li><svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-x"/></svg> <strong>Cable subdimensionado.</strong> Un inversor de 1.500 W con cable de 6 mm² funciona unos días y calienta hasta fundir el aislante.</li>
+          <li><svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-x"/></svg> <strong>Ausencia de fusible en el positivo de la batería.</strong> Nada más barato ni más determinante en toda la instalación.</li>
+          <li><svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-x"/></svg> <strong>Terminales flojos o mal prensados.</strong> Generan resistencia, la resistencia genera calor y el calor afloja más la unión. Aprieta al par indicado y revisa los tornillos cada año.</li>
+          <li><svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-x"/></svg> <strong>Mezclar baterías de distinta química, capacidad o edad.</strong> La más cargada intenta cargar a la débil con corrientes que ningún BMS espera.</li>
+        </ul>
+      </div>
+    </div>
+    <p>Un detector de humo y un extintor de polvo accesible cuestan poco y son lo único que sirve cuando ya ha pasado.</p>
+
+    <h2 id="alternativa">La alternativa sin cableado</h2>
+    <p>Todo lo anterior es evitable. Una estación portátil lleva dentro las mismas celdas LiFePO4, el mismo BMS, un MPPT y un inversor, ya cableados, protegidos y certificados como un solo producto: solo enchufas el panel a la entrada solar y fijas la estación. Pagas entre un 30 % y un 40 % más por vatio-hora que en un montaje a medida, y no prensas un solo terminal.</p>
+    <p>Tienes los cinco modelos que recomendamos en la <a href="../comparativa.html">comparativa 2026</a>, el panel que necesita cada uno en <a href="cuantos-paneles-solares-necesito.html">cuántos paneles solares necesito</a> y los criterios de calidad de celda en la <a href="mejores-baterias-lifepo4-100ah.html">guía de baterías LiFePO4</a>. Si no sabes qué capacidad te hace falta, empieza por la <a href="../index.html#calculadora">calculadora</a>.</p>
+    <p style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="boton boton--naranja" data-producto="ecoflow-delta-2">Ver estación de 1 kWh sin cableado <svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-arrow-up-right"/></svg></a>
+      <a class="boton boton--contorno" data-producto="panel-220w">Ver panel plegable de 220 W <svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-arrow-up-right"/></svg></a>
+    </p>
+
+    <h2 id="faq">Preguntas frecuentes</h2>
+    <details>
+      <summary>¿Se conecta primero el panel o la batería al regulador? <svg class="icono" aria-hidden="true"><use href="../assets/img/iconos.svg#i-chevron-down"/></svg></summary>
+      <p>Primero la batería y después el panel. El regulador necesita la tensión de la batería para arrancar y para detectar si el sistema es de 12 o de 24 V; alimentado solo desde el panel puede detectar mal el sistema o dañarse. Para desconectar se hace al contrario: primero el panel, luego la batería.</p>
+    </details>
+    <details>
+      <summary>¿Dónde se coloca el fusible principal de la batería? <svg class="icono" aria-hidden="true"><use href="../assets/img/iconos.svg#i-chevron-down"/></svg></summary>
+      <p>En el polo positivo, a menos de 20 cm del borne. El tramo de cable que queda entre el borne y el fusible no está protegido por nada, y un cortocircuito ahí libera cientos o miles de amperios sin que nada lo corte, con el cable al rojo en segundos.</p>
+    </details>
+    <details>
+      <summary>¿Qué sección de cable necesito para 30 A a 12 V? <svg class="icono" aria-hidden="true"><use href="../assets/img/iconos.svg#i-chevron-down"/></svg></summary>
+      <p>6 mm² para una tirada corta, de hasta metro y medio por polo. Si el recorrido total de ida y vuelta pasa de tres metros hay que subir de sección para mantener la caída de tensión por debajo del 3 %, que a 12 V son solo 0,36 V.</p>
+    </details>
+    <details>
+      <summary>¿Por qué no vale cable de aluminio en una instalación de 12 V? <svg class="icono" aria-hidden="true"><use href="../assets/img/iconos.svg#i-chevron-down"/></svg></summary>
+      <p>Porque conduce alrededor de un 60 % de lo que conduce el cobre, se deforma en frío bajo la presión del terminal y acaba aflojando la conexión, y su óxido superficial es aislante. En un sistema de baja tensión y alta corriente esas tres cosas juntas terminan en un punto caliente.</p>
+    </details>
+
+    <div class="ficha-autor">
+      <span class="marco-icono"><svg class="icono icono--l" aria-hidden="true"><use href="../assets/img/iconos.svg#i-shield-check"/></svg></span>
+      <p>Redacción de <strong>Estacionportatil</strong>. Contenido informativo de seguridad eléctrica, no sustituye a un proyecto ni a un instalador autorizado. Puedes leer <a href="../metodologia.html">nuestra metodología</a>. Última revisión: septiembre de 2026.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <div class="rejilla">
+      <div>
+        <span class="logotipo">
+          <svg class="icono" aria-hidden="true"><use href="../assets/img/iconos.svg#i-zap"/></svg>
+          Estacionportatil
+        </span>
+        <p style="margin:0">Análisis independientes de energía solar portátil, autoconsumo y soluciones off-grid.</p>
+      </div>
+      <div>
+        <h4>Contenidos</h4>
+        <ul>
+          <li><a href="../index.html#calculadora"><svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-calculator"/></svg> Calculadora de consumo</a></li>
+          <li><a href="../comparativa.html"><svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-table-2"/></svg> Comparativa 2026</a></li>
+          <li><a href="../index.html#guias"><svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-book-open"/></svg> Guías y análisis</a></li>
+          <li><a href="../metodologia.html"><svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-shield-check"/></svg> Cómo analizamos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aviso de afiliación</h4>
+        <p style="margin:0">Como Afiliado de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables. Las comisiones no influyen en el orden de las recomendaciones.</p>
+      </div>
+    </div>
+    <div class="pie__legal">
+      <p style="margin:0">© 2026 Estacionportatil</p>
+      <nav aria-label="Enlaces legales">
+        <a href="../legal/aviso-legal.html">Aviso legal</a>
+        <a href="../legal/privacidad.html">Privacidad</a>
+        <a href="../legal/cookies.html">Cookies</a>
+        <a href="../legal/afiliados.html">Afiliación</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/datos.js"></script>
+<script src="../assets/js/menu.js"></script>
+<script src="../assets/js/afiliados.js"></script>
+</body>
+</html>

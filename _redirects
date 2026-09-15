@@ -1,0 +1,25 @@
+# Voltio Nómada · redirecciones de afiliado (opcional)
+#
+# Válido para Cloudflare Pages y Netlify. Permite servir los enlaces como
+# /ir/<id-de-producto> en lugar de exponer la URL del programa de afiliación.
+# Ventajas: cambias una URL en un solo sitio, sobrevives a un cambio de programa
+# sin tocar contenido y ves los clics en los registros del servidor.
+# robots.txt ya excluye /ir/ del rastreo.
+#
+# Para activarlo:
+#   1. Sustituye cada URL de ejemplo por tu enlace real de afiliado.
+#   2. En assets/js/datos.js pon en ENLACES_AFILIADOS la ruta interna,
+#      por ejemplo: 'ecoflow-delta-2': '/ir/ecoflow-delta-2'
+#
+# El código 302 es intencionado: la redirección no es permanente porque el
+# programa de destino puede cambiar.
+
+/ir/ecoflow-delta-2      https://www.example.com/reemplazar   302
+/ir/ecoflow-river-2-pro  https://www.example.com/reemplazar   302
+/ir/bluetti-ac180        https://www.example.com/reemplazar   302
+/ir/bluetti-ac200max     https://www.example.com/reemplazar   302
+/ir/jackery-1000-plus    https://www.example.com/reemplazar   302
+/ir/panel-100w           https://www.example.com/reemplazar   302
+/ir/panel-220w           https://www.example.com/reemplazar   302
+/ir/panel-400w           https://www.example.com/reemplazar   302
+/ir/panel-600w           https://www.example.com/reemplazar   302

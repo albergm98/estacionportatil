@@ -1,0 +1,22 @@
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# Secretos / entorno
+.env
+.env.*
+
+# Originales fotográficos (pesados; la web usa WebP)
+assets/img/foto/original/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editor
+.idea/
+*.swp

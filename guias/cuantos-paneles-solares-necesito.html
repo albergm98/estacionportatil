@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cuántos paneles solares necesito: la fórmula con datos de España | Estacionportatil</title>
+<meta name="description" content="La fórmula para calcular los vatios-pico que necesitas, las horas de sol pico reales de España, por qué se aplica un 75 % de rendimiento y los tres errores típicos.">
+<link rel="canonical" href="https://estacionportatil.com/guias/cuantos-paneles-solares-necesito.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Estacionportatil">
+<meta property="og:title" content="Cuántos paneles solares necesito: la fórmula con datos de España">
+<meta property="og:image" content="https://estacionportatil.com/assets/img/og/planta-solar.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:description" content="Vatios-pico = consumo diario ÷ (horas de sol pico × 0,75). Lo que significa cada término y cómo aplicarlo sin quedarte corto en invierno.">
+<meta property="og:url" content="https://estacionportatil.com/guias/cuantos-paneles-solares-necesito.html">
+<link rel="preload" href="../assets/fuentes/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/estilos.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Cuántos paneles solares necesito: la fórmula con datos de España",
+      "description": "Cómo calcular los vatios-pico de panel solar a partir del consumo diario, las horas de sol pico de España y el rendimiento real del sistema.",
+      "image": "https://estacionportatil.com/assets/img/foto/planta-solar-1200.webp",
+      "inLanguage": "es-ES",
+      "datePublished": "2026-02-04",
+      "dateModified": "2026-09-15",
+      "author": { "@type": "Organization", "name": "Estacionportatil", "url": "https://estacionportatil.com/metodologia.html" },
+      "publisher": { "@type": "Organization", "name": "Estacionportatil" },
+      "mainEntityOfPage": "https://estacionportatil.com/guias/cuantos-paneles-solares-necesito.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://estacionportatil.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Guías", "item": "https://estacionportatil.com/#guias" },
+        { "@type": "ListItem", "position": 3, "name": "Cuántos paneles solares necesito", "item": "https://estacionportatil.com/guias/cuantos-paneles-solares-necesito.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuántos vatios de panel necesito para 800 Wh al día?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Con la media anual de 4 horas de sol pico necesitas unos 267 Wp, es decir dos paneles de 150 W o uno de 220 W apurando. En verano en el sur bastan 178 Wp y en invierno en el norte hacen falta unos 534 Wp para el mismo consumo." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué se divide entre 0,75 y no se usa el vatiaje del panel directamente?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Porque entre el panel y la batería se pierde en torno a un 25 % por el rendimiento del regulador, la temperatura de célula, la orientación no perpendicular al sol y la suciedad. Los vatios-pico son un valor de laboratorio, no lo que entra en la batería." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Es mejor un panel rígido en el techo o uno plegable orientable?",
+          "acceptedAnswer": { "@type": "Answer", "text": "El rígido produce sin que hagas nada y funciona en marcha, pero está horizontal y no se puede orientar. El plegable orientado al sol puede rendir entre un 20 % y un 40 % más en invierno, a cambio de sacarlo, colocarlo y vigilarlo. Lo habitual es combinar rígido como base y plegable como refuerzo." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto más rinde un regulador MPPT que uno PWM?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Entre un 15 % y un 30 % según la temperatura y la diferencia entre la tensión del panel y la de la batería. El PWM arrastra el panel a la tensión de batería y desperdicia la diferencia; el MPPT busca el punto de máxima potencia y convierte ese exceso de tensión en corriente aprovechable." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body data-raiz="../">
+
+<header class="cabecera">
+  <div class="contenedor">
+    <a class="logotipo" href="../">
+      <svg class="icono" aria-hidden="true"><use href="../assets/img/iconos.svg#i-zap"/></svg>
+      Estacionportatil
+    </a>
+    <button type="button" class="menu-boton" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu" id="menu-principal" aria-label="Navegación principal">
+      <details class="menu__grupo">
+        <summary>Herramientas</summary>
+        <div class="menu__lista">
+          <a href="../index.html#calculadora">Calculadora de consumo</a>
+          <a href="../comparativa.html">Comparativa 2026</a>
+        </div>
+      </details>
+      <details class="menu__grupo">
+        <summary>Guías</summary>
+        <div class="menu__lista">
+          <a href="../index.html#guias">Todas las guías</a>
+          <a href="../guias/ecoflow-delta-2-vs-bluetti-ac180.html">Delta 2 vs AC180</a>
+          <a href="../guias/cuantos-paneles-solares-necesito.html">Cuántos paneles necesito</a>
+          <a href="../guias/mejores-baterias-lifepo4-100ah.html">Baterías LiFePO4 100 Ah</a>
+          <a href="../guias/instalacion-segura-kit-solar-12v.html">Instalación segura 12 V</a>
+        </div>
+      </details>
+      <a href="../metodologia.html">Metodología</a>
+    </nav>
+    <a class="boton boton--verde" href="../index.html#calculadora">
+      <svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-calculator"/></svg>
+      Calcular consumo
+    </a>
+  </div>
+</header>
+
+<main class="articulo articulo--guia">
+  <div class="contenedor contenedor--estrecho">
+    <nav class="migas" aria-label="Ruta de navegación">
+      <a href="../">Inicio</a>
+      <svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-chevron-right"/></svg>
+      <a href="../index.html#guias">Guías</a>
+      <svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-chevron-right"/></svg>
+      <span>Cuántos paneles solares necesito</span>
+    </nav>
+
+    <figure class="banda-foto">
+      <img alt="Hileras de paneles solares fotovoltaicos montados sobre estructura metálica en un terreno llano"
+           width="3840" height="2550" loading="lazy" decoding="async"
+           src="../assets/img/foto/planta-solar-1200.webp"
+           srcset="../assets/img/foto/planta-solar-800.webp 800w,
+                   ../assets/img/foto/planta-solar-1200.webp 1200w,
+                   ../assets/img/foto/planta-solar-1600.webp 1600w,
+                   ../assets/img/foto/planta-solar-2400.webp 2400w"
+           sizes="(min-width: 1200px) 1120px, 100vw">
+    </figure>
+
+    <h1>Cuántos paneles solares necesito: la fórmula y los datos de España</h1>
+    <p class="intro" style="margin-left:0;text-align:left">No hace falta ninguna tabla de fabricante. Con tu consumo diario en vatios-hora y las horas de sol pico de tu zona sale un número, y ese número decide si en enero tienes luz o tienes que arrancar el motor.</p>
+
+    <p class="divulgacion">
+      <svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-info"/></svg>
+      <span>Esta guía contiene enlaces de afiliado: si compras a través de ellos recibimos una comisión sin coste adicional para ti, y no cambia lo que recomendamos. <a href="../metodologia.html">Cómo decidimos</a>.</span>
+    </p>
+
+    <div class="indice">
+      <strong><svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-list-checks"/></svg> Contenido</strong>
+      <ol>
+        <li><a href="#formula">La fórmula, en una línea</a></li>
+        <li><a href="#hsp">Qué son las horas de sol pico</a></li>
+        <li><a href="#factor">Por qué se divide entre 0,75</a></li>
+        <li><a href="#ejemplos">Ejemplos numéricos resueltos</a></li>
+        <li><a href="#rigido-plegable">Panel rígido o plegable orientable</a></li>
+        <li><a href="#mppt">MPPT frente a PWM</a></li>
+        <li><a href="#errores">Los tres errores típicos</a></li>
+        <li><a href="#comprar">Qué panel comprar según el resultado</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ol>
+    </div>
+
+    <h2 id="formula">La fórmula, en una línea</h2>
+    <p>Todo el dimensionado fotovoltaico de un sistema pequeño cabe aquí:</p>
+    <div class="destacado">
+      <svg class="icono icono--l" aria-hidden="true"><use href="../assets/img/iconos.svg#i-calculator"/></svg>
+      <p><strong>Vatios-pico necesarios = consumo diario (Wh) ÷ (horas de sol pico × 0,75)</strong></p>
+    </div>
+    <p>El consumo diario es la suma de cada aparato por las horas que funciona <em>de verdad</em>: un frigorífico de compresor de 45 W no gasta 1.080 Wh al día, porque el compresor trabaja alrededor de un tercio del tiempo. Si no lo tienes medido, pasa tus aparatos por la <a href="../index.html#calculadora">calculadora de consumo</a> antes de seguir. Con un consumo mal estimado, la fórmula devuelve un número inútil.</p>
+
+    <h2 id="hsp">Qué son las horas de sol pico (y las que tienes de verdad)</h2>
+    <p>Una hora de sol pico (HSP) equivale a una hora de irradiancia de 1.000 W por metro cuadrado, la condición en la que se mide la potencia de un panel. No son las horas de luz: un día de junio con catorce horas de claridad puede darte seis HSP, porque al amanecer y al atardecer el sol entra muy inclinado y aporta poco.</p>
+    <p>Estos son los valores que usa el sitio, tomados de PVGIS (Comisión Europea) para superficie horizontal:</p>
+    <div class="tabla-envoltorio" style="margin-block:20px">
+      <table>
+        <thead><tr><th scope="col">Escenario</th><th scope="col">HSP</th><th scope="col">Cuándo usarlo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><span class="fila"><svg class="icono" aria-hidden="true" style="color:var(--ambar-500)"><use href="../assets/img/iconos.svg#i-sun"/></svg> Verano · sur</span></th><td><strong>6</strong></td><td>Solo si usas el sistema de junio a septiembre</td></tr>
+          <tr><th scope="row"><span class="fila"><svg class="icono" aria-hidden="true" style="color:var(--ambar-500)"><use href="../assets/img/iconos.svg#i-sun-medium"/></svg> Verano · norte</span></th><td>4,8</td><td>Cantábrico y Pirineo en temporada alta</td></tr>
+          <tr class="destacada"><th scope="row"><span class="fila"><svg class="icono" aria-hidden="true" style="color:var(--verde-500)"><use href="../assets/img/iconos.svg#i-scale"/></svg> Media anual</span></th><td><strong>4</strong></td><td>El valor por defecto para uso durante todo el año</td></tr>
+          <tr><th scope="row"><span class="fila"><svg class="icono" aria-hidden="true" style="color:var(--tinta-suave)"><use href="../assets/img/iconos.svg#i-thermometer"/></svg> Invierno · sur</span></th><td>3</td><td>Diciembre y enero en Andalucía o Murcia</td></tr>
+          <tr><th scope="row"><span class="fila"><svg class="icono" aria-hidden="true" style="color:var(--tinta-suave)"><use href="../assets/img/iconos.svg#i-thermometer"/></svg> Invierno · norte</span></th><td>2</td><td>El peor caso realista en España</td></tr>
+        </tbody>
+      </table>
+      <p class="nota-tabla">Valores orientativos de irradiación sobre plano horizontal según PVGIS. Un panel inclinado hacia el sur gana bastante en invierno respecto a estas cifras.</p>
+    </div>
+
+    <h2 id="factor">Por qué se divide entre 0,75</h2>
+    <p>Los vatios-pico de la etiqueta se miden en condiciones estándar de ensayo: 1.000 W/m², célula a 25 °C y espectro AM1.5. Esas tres cosas casi nunca coinciden en el techo de una furgoneta. El 0,75 recoge cuatro pérdidas que se acumulan:</p>
+    <ul>
+      <li><strong>Regulador y cableado.</strong> Un MPPT decente convierte al 95-98 % y el cable se lleva otro poco. Con un PWM la pérdida es mucho mayor.</li>
+      <li><strong>Temperatura de célula.</strong> Contraintuitivo pero decisivo: el panel produce menos cuanto más calienta. El coeficiente típico ronda −0,35 % por grado por encima de 25 °C, y una célula al sol en agosto llega a 60-65 °C, entre un 12 % y un 14 % menos de potencia.</li>
+      <li><strong>Orientación.</strong> Un panel pegado al techo está horizontal y el sol casi nunca cae perpendicular; con el sol bajo de invierno la pérdida por ángulo es considerable.</li>
+      <li><strong>Suciedad.</strong> Polvo, sal, polen y excrementos restan entre un 2 % y un 5 % si no limpias el cristal cada pocas semanas.</li>
+    </ul>
+    <p>Con MPPT de calidad, panel inclinado y clima fresco puedes trabajar con 0,80. Con un plegable barato y regulador PWM, 0,65 se acerca más. El 0,75 es el punto medio honesto.</p>
+
+    <h2 id="ejemplos">Ejemplos numéricos resueltos</h2>
+    <p>Tomamos un consumo típico de camper con frigorífico, luces, bomba de agua, móviles y algo de portátil: <strong>800 Wh al día</strong>.</p>
+    <ul>
+      <li><strong>Uso anual (4 HSP):</strong> 800 ÷ (4 × 0,75) = 800 ÷ 3 = <strong>267 Wp</strong>. Un panel de 220 W se queda corto los días medios; con dos de 150 W o un rígido de 300 W vas sobrado.</li>
+      <li><strong>Solo verano en el sur (6 HSP):</strong> 800 ÷ 4,5 = <strong>178 Wp</strong>. Aquí sí basta un plegable de 220 W.</li>
+      <li><strong>Invierno en el norte (2 HSP):</strong> 800 ÷ 1,5 = <strong>534 Wp</strong>. Tres veces más panel para exactamente el mismo consumo.</li>
+    </ul>
+    <p>Dos casos más: un fin de semana con nevera pequeña, luces y móviles son unos <strong>400 Wh al día</strong>, que en verano en el sur salen a 400 ÷ 4,5 = 89 Wp, así que un plegable de 100 W cumple. Una cabaña con <strong>1.500 Wh al día</strong> y uso anual pide 1.500 ÷ 3 = 500 Wp, que en la práctica es un kit rígido de 600 W en el tejado.</p>
+    <div class="destacado">
+      <svg class="icono icono--l" aria-hidden="true"><use href="../assets/img/iconos.svg#i-battery-charging"/></svg>
+      <p>El panel resuelve la generación, no el almacenamiento. La batería para pasar la noche y algún día nublado se calcula aparte: lo explicamos en la <a href="mejores-baterias-lifepo4-100ah.html">guía de baterías LiFePO4</a>.</p>
+    </div>
+
+    <h2 id="rigido-plegable">Panel rígido en techo o plegable orientable</h2>
+    <p>El rígido atornillado al techo tiene una ventaja que no se puede comprar de otra forma: produce siempre, incluso conduciendo, sin que hagas nada. Su límite es geométrico: está horizontal y no se puede mover, así que en diciembre, con el sol a 30° sobre el horizonte, recoge una fracción de lo que podría.</p>
+    <p>El plegable resuelve eso. Perpendicular al sol y reorientado dos o tres veces al día, puede rendir entre un 20 % y un 40 % más que la misma potencia en horizontal durante el invierno. El peaje es la logística: sacarlo, apoyarlo, atarlo si hace viento y no dejarlo solo en un aparcamiento. En camper de uso anual la mejor combinación es rígido como base fija más un plegable de 100-220 W de refuerzo.</p>
+
+    <h2 id="mppt">Por qué un MPPT rinde entre un 15 % y un 30 % más que un PWM</h2>
+    <p>Un panel de 12 V nominal no trabaja a 12 V: su punto de máxima potencia está en 18-20 V. Un PWM funciona como un interruptor rápido y arrastra el panel hasta la tensión de batería, unos 13,5 V en carga. La corriente se mantiene, pero la diferencia de tensión se tira: de 18 V a 13,5 V pierdes cerca de una cuarta parte de la potencia disponible.</p>
+    <p>Un MPPT es un convertidor continua-continua: busca electrónicamente el punto de máxima potencia y transforma ese exceso de tensión en corriente extra hacia la batería. La ganancia real está entre un 15 % y un 30 %, y crece cuando hace frío (el panel sube de tensión), cuando la batería está descargada y cuando usas paneles de 24 V o residenciales con una batería de 12 V.</p>
+    <p>La diferencia de precio entre un PWM y un MPPT de 20 A es menor que los 100 Wp de panel extra que necesitarías para compensarlo. Si el presupuesto está justo, recorta en otro sitio antes que aquí.</p>
+
+    <h2 id="errores">Los tres errores típicos</h2>
+    <div class="balance">
+      <div class="balance--contras">
+        <h4><svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-triangle-alert"/></svg> Lo que sale mal</h4>
+        <ul>
+          <li><svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-x"/></svg> <strong>Dimensionar con datos de verano.</strong> Calculas en agosto con 6 HSP, funciona de maravilla y en noviembre descubres que te falta la mitad. Calcula con la media anual como mínimo, y con datos de invierno si vas a usarlo todo el año.</li>
+          <li><svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-x"/></svg> <strong>Ignorar la sombra parcial.</strong> Las células van en serie, así que la corriente de todas queda limitada por la peor. La sombra de una antena o de un ventilador de techo sobre una sola célula tumba la producción del panel completo, no una parte proporcional. Los diodos de bypass acotan el daño a un tercio del panel, pero no lo eliminan.</li>
+          <li><svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-x"/></svg> <strong>Confundir vatios-pico con vatios reales.</strong> Un panel de 200 Wp casi nunca mete 200 W en la batería: en un buen día de mayo verás picos de 160-170 W un rato corto, y en un día gris de invierno puede no pasar de 30 W. Los Wp son una etiqueta de laboratorio para comparar paneles entre sí.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 id="comprar">Qué panel comprar según el resultado</h2>
+    <p>Con los vatios-pico ya calculados, cuatro configuraciones cubren casi todos los casos:</p>
+    <ul>
+      <li><strong>Hasta 120 Wp:</strong> un plegable de 100 W. Fines de semana, nevera pequeña y carga de dispositivos.</li>
+      <li><strong>Entre 150 y 250 Wp:</strong> un plegable de 220 W. Es el punto dulce para camper de verano.</li>
+      <li><strong>Entre 300 y 450 Wp:</strong> dos paneles de 220 W en paralelo. Uso anual con consumo medio.</li>
+      <li><strong>500 Wp o más:</strong> kit rígido de 600 W en techo. Cabaña, uso invernal o estación grande que recargar en un día.</li>
+    </ul>
+    <p style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="boton boton--naranja" data-producto="panel-220w">Ver panel plegable de 220 W <svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-arrow-up-right"/></svg></a>
+      <a class="boton boton--contorno" data-producto="panel-400w">Dos paneles de 220 W <svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-arrow-up-right"/></svg></a>
+      <a class="boton boton--contorno" data-producto="panel-600w">Kit rígido de 600 W <svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-arrow-up-right"/></svg></a>
+    </p>
+    <p>Antes de taladrar el techo, lee la <a href="instalacion-segura-kit-solar-12v.html">guía de instalación segura de un kit de 12 V</a>: la sección de cable y el fusible pesan tanto como los vatios que compres. Y si prefieres saltarte el cableado, en la <a href="../comparativa.html">comparativa de estaciones portátiles</a> tienes equipos con MPPT integrado a los que solo hay que enchufar el panel.</p>
+
+    <h2 id="faq">Preguntas frecuentes</h2>
+    <details>
+      <summary>¿Cuántos vatios de panel necesito para 800 Wh al día? <svg class="icono" aria-hidden="true"><use href="../assets/img/iconos.svg#i-chevron-down"/></svg></summary>
+      <p>Con la media anual de 4 horas de sol pico necesitas unos 267 Wp, es decir dos paneles de 150 W o uno de 220 W apurando. En verano en el sur bastan 178 Wp y en invierno en el norte hacen falta unos 534 Wp para el mismo consumo.</p>
+    </details>
+    <details>
+      <summary>¿Por qué se divide entre 0,75 y no se usa el vatiaje del panel directamente? <svg class="icono" aria-hidden="true"><use href="../assets/img/iconos.svg#i-chevron-down"/></svg></summary>
+      <p>Porque entre el panel y la batería se pierde en torno a un 25 % por el rendimiento del regulador, la temperatura de célula, la orientación no perpendicular al sol y la suciedad. Los vatios-pico son un valor de laboratorio, no lo que entra en la batería.</p>
+    </details>
+    <details>
+      <summary>¿Es mejor un panel rígido en el techo o uno plegable orientable? <svg class="icono" aria-hidden="true"><use href="../assets/img/iconos.svg#i-chevron-down"/></svg></summary>
+      <p>El rígido produce sin que hagas nada y funciona en marcha, pero está horizontal y no se puede orientar. El plegable orientado al sol puede rendir entre un 20 % y un 40 % más en invierno, a cambio de sacarlo, colocarlo y vigilarlo. Lo habitual es combinar rígido como base y plegable como refuerzo.</p>
+    </details>
+    <details>
+      <summary>¿Cuánto más rinde un regulador MPPT que uno PWM? <svg class="icono" aria-hidden="true"><use href="../assets/img/iconos.svg#i-chevron-down"/></svg></summary>
+      <p>Entre un 15 % y un 30 % según la temperatura y la diferencia entre la tensión del panel y la de la batería. El PWM arrastra el panel a la tensión de batería y desperdicia la diferencia; el MPPT busca el punto de máxima potencia y convierte ese exceso de tensión en corriente aprovechable.</p>
+    </details>
+
+    <div class="ficha-autor">
+      <span class="marco-icono"><svg class="icono icono--l" aria-hidden="true"><use href="../assets/img/iconos.svg#i-shield-check"/></svg></span>
+      <p>Redacción de <strong>Estacionportatil</strong>. Los valores de radiación proceden de PVGIS y los factores de pérdida son los mismos que aplica nuestra calculadora. Puedes leer <a href="../metodologia.html">cómo calculamos y qué no hacemos</a>. Última revisión: septiembre de 2026.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <div class="rejilla">
+      <div>
+        <span class="logotipo">
+          <svg class="icono" aria-hidden="true"><use href="../assets/img/iconos.svg#i-zap"/></svg>
+          Estacionportatil
+        </span>
+        <p style="margin:0">Análisis independientes de energía solar portátil, autoconsumo y soluciones off-grid.</p>
+      </div>
+      <div>
+        <h4>Contenidos</h4>
+        <ul>
+          <li><a href="../index.html#calculadora"><svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-calculator"/></svg> Calculadora de consumo</a></li>
+          <li><a href="../comparativa.html"><svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-table-2"/></svg> Comparativa 2026</a></li>
+          <li><a href="../index.html#guias"><svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-book-open"/></svg> Guías y análisis</a></li>
+          <li><a href="../metodologia.html"><svg class="icono icono--s" aria-hidden="true"><use href="../assets/img/iconos.svg#i-shield-check"/></svg> Cómo analizamos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aviso de afiliación</h4>
+        <p style="margin:0">Como Afiliado de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables. Las comisiones no influyen en el orden de las recomendaciones.</p>
+      </div>
+    </div>
+    <div class="pie__legal">
+      <p style="margin:0">© 2026 Estacionportatil</p>
+      <nav aria-label="Enlaces legales">
+        <a href="../legal/aviso-legal.html">Aviso legal</a>
+        <a href="../legal/privacidad.html">Privacidad</a>
+        <a href="../legal/cookies.html">Cookies</a>
+        <a href="../legal/afiliados.html">Afiliación</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/datos.js"></script>
+<script src="../assets/js/menu.js"></script>
+<script src="../assets/js/afiliados.js"></script>
+</body>
+</html>

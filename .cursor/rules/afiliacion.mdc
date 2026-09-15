@@ -1,0 +1,30 @@
+---
+description: Afiliación Voltio Nómada — enlaces, divulgación y convenciones ES
+globs: "**/*.{html,js,css}"
+alwaysApply: false
+---
+
+# Afiliación · Voltio Nómada
+
+Al tocar CTAs de compra, `ENLACES_AFILIADOS`, `afiliados.js` o avisos legales de monetización, seguir el skill **afiliacion-web**.
+
+## Fuente de verdad
+
+- URLs y tag: `assets/js/datos.js` (`AJUSTES.etiquetaAmazon`, `ENLACES_AFILIADOS`)
+- Inyección: `assets/js/afiliados.js` (`aplicarEnlacesAfiliados`, `enlaceAmazon`)
+- HTML: solo `data-producto="id"`, nunca URL de afiliado embebida
+- Aviso UI: clase `.divulgacion` + bloque en pie
+- Legal: `legal/afiliados.html` (crear/actualizar si falta)
+
+## Código
+
+- Variables y funciones en castellano de España
+- Pocas líneas; `const` + flecha; sin clases
+- Sin destino → fallback a `comparativa.html` con `data-raiz`
+- Enlace externo → `rel="sponsored nofollow noopener"` y `target="_blank"`
+
+## No hacer
+
+- Hardcodear `amzn.to` / `tag=` en HTML
+- Ordenar recomendaciones por comisión
+- Olvidar divulgación junto al primer CTA de compra
