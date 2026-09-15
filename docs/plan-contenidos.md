@@ -45,8 +45,8 @@ Criterio: primero lo que convierte, después lo que trae volumen.
 
 ### Comparativas directas (máxima conversión)
 1. ~~EcoFlow Delta 2 vs Jackery Explorer 1000 Plus~~ (publicado)
-2. Bluetti AC180 vs AC200MAX: cuándo merece el salto de capacidad
-3. Estación de energía o instalación fija a 12 V: cuentas reales
+2. ~~Bluetti AC180 vs AC200MAX: cuándo merece el salto de capacidad~~ (publicado)
+3. ~~Estación de energía o instalación fija a 12 V: cuentas reales~~ (publicado)
 
 ### Guías de compra por caso de uso
 4. ~~Mejor estación de energía para furgoneta camper~~ (publicado)
@@ -58,7 +58,7 @@ Criterio: primero lo que convierte, después lo que trae volumen.
 8. LiFePO4 frente a iones de litio: cuál compensa y por qué
 9. Cuánto consume una nevera de compresor en una camper
 10. Cómo cargar una estación de energía con el alternador del vehículo
-11. ¿Se puede usar una placa de inducción con una estación de energía?
+11. ~~¿Se puede usar una placa de inducción con una estación de energía?~~ (publicado)
 12. Errores al dimensionar una instalación solar en una furgoneta
 
 ---
