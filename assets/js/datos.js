@@ -29,7 +29,7 @@ const DATOS_LEGALES = {
   titular: 'Alberto Gallardo Morales',
   nif: '06023563R',
   domicilio: 'C/ Golondrinas 4, 2º B, 28400 Collado Villalba, Madrid',
-  email: 'hola@estacionportatil.com',
+  email: 'soporte@estacionportatil.com',
   telefono: '',
   registroMercantil: '',
   dominio: 'https://estacionportatil.com',
