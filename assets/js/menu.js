@@ -1,4 +1,4 @@
-/* Menú suave + desplazamiento a anclas de la misma página. */
+/* Menú móvil + anclas suaves + tablas sin scroll lateral. */
 
 const reduceMovimiento = () =>
   window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -24,7 +24,19 @@ const cerrarMenuMovil = () => {
   cabecera.classList.remove('cabecera--abierta')
   boton.setAttribute('aria-expanded', 'false')
   boton.setAttribute('aria-label', 'Abrir menú')
+  document.body.classList.remove('cuerpo--menu-abierto')
   cerrarGrupos()
+}
+
+const abrirOCerrarMenu = () => {
+  const cabecera = document.querySelector('.cabecera')
+  const boton = document.querySelector('.menu-boton')
+  if (!cabecera || !boton) return
+  const abierto = cabecera.classList.toggle('cabecera--abierta')
+  boton.setAttribute('aria-expanded', abierto ? 'true' : 'false')
+  boton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú')
+  document.body.classList.toggle('cuerpo--menu-abierto', abierto && esMovil())
+  if (!abierto) cerrarGrupos()
 }
 
 const irAAncla = hash => {
@@ -38,13 +50,32 @@ const irAAncla = hash => {
   return true
 }
 
+/* Etiqueta cada <td> con el título de columna del thead (para tarjetas en móvil). */
+const prepararTablas = () => {
+  document.querySelectorAll('.tabla-envoltorio table').forEach(tabla => {
+    const etiquetas = [...tabla.querySelectorAll('thead th')].map(th =>
+      (th.textContent || '').replace(/\s+/g, ' ').trim()
+    )
+    if (!etiquetas.length) return
+    tabla.querySelectorAll('tbody tr').forEach(fila => {
+      const desfase = fila.querySelector(':scope > th') ? 1 : 0
+      fila.querySelectorAll(':scope > td').forEach((celda, indice) => {
+        if (celda.dataset.etiqueta) {
+          if ((celda.textContent || '').trim().length > 48) celda.classList.add('celda-texto')
+          return
+        }
+        const etiqueta = etiquetas[indice + desfase]
+        if (!etiqueta) return
+        celda.dataset.etiqueta = etiqueta
+        if ((celda.textContent || '').trim().length > 48) celda.classList.add('celda-texto')
+      })
+    })
+  })
+}
+
 document.addEventListener('click', evento => {
-  const boton = evento.target.closest('.menu-boton')
-  if (boton) {
-    const cabecera = boton.closest('.cabecera')
-    const abierto = cabecera.classList.toggle('cabecera--abierta')
-    boton.setAttribute('aria-expanded', abierto ? 'true' : 'false')
-    boton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú')
+  if (evento.target.closest('.menu-boton')) {
+    abrirOCerrarMenu()
     return
   }
 
@@ -52,24 +83,28 @@ document.addEventListener('click', evento => {
   if (enlace) {
     let url
     try { url = new URL(enlace.href, location.href) } catch { return }
-    if (url.hash && url.hash !== '#' && mismaPagina(url)) {
-      const nodo = document.querySelector(url.hash)
-      if (nodo) {
-        evento.preventDefault()
-        if (esMovil()) cerrarMenuMovil()
-        const espera = esMovil() && !reduceMovimiento() ? 180 : 0
-        setTimeout(() => irAAncla(url.hash), espera)
-        return
-      }
+    const enMenu = enlace.closest('.menu') || enlace.closest('.cabecera .boton--verde')
+    if (url.hash && url.hash !== '#' && mismaPagina(url) && document.querySelector(url.hash)) {
+      evento.preventDefault()
+      if (esMovil()) cerrarMenuMovil()
+      setTimeout(() => irAAncla(url.hash), esMovil() && !reduceMovimiento() ? 80 : 0)
+      return
     }
-    if (enlace.closest('.menu') && esMovil()) cerrarMenuMovil()
+    if (enMenu && esMovil()) cerrarMenuMovil()
+    return
   }
 
-  if (!evento.target.closest('.menu') && !evento.target.closest('.menu-boton')) {
-    cerrarGrupos()
-    if (esMovil()) cerrarMenuMovil()
-  }
+  if (evento.target.closest('.menu')) return
+
+  cerrarGrupos()
+  if (esMovil()) cerrarMenuMovil()
 })
+
+document.addEventListener('keydown', evento => {
+  if (evento.key === 'Escape') cerrarMenuMovil()
+})
+
+window.matchMedia('(max-width: 860px)').addEventListener('change', () => cerrarMenuMovil())
 
 document.querySelectorAll('.menu__grupo').forEach(grupo => {
   grupo.addEventListener('toggle', () => {
@@ -77,11 +112,11 @@ document.querySelectorAll('.menu__grupo').forEach(grupo => {
   })
 })
 
-/* Al llegar con #en-la-url, baja suave tras pintar la página. */
-if (location.hash && document.querySelector(location.hash)) {
-  if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
-  window.scrollTo(0, 0)
+prepararTablas()
+
+if (location.hash && location.hash !== '#') {
   requestAnimationFrame(() => {
-    setTimeout(() => irAAncla(location.hash), reduceMovimiento() ? 0 : 60)
+    const nodo = document.querySelector(location.hash)
+    if (nodo) nodo.scrollIntoView({ behavior: reduceMovimiento() ? 'auto' : 'smooth', block: 'start' })
   })
 }

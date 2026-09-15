@@ -12,7 +12,7 @@ const AJUSTES = {
   dominio: 'https://estacionportatil.com',
   // Etiqueta de Amazon Afiliados. Sustitúyela por la tuya antes de publicar.
   etiquetaAmazon: 'estacionportatil-21',
-  // Google Analytics 4. Vacío = sin analítica ni banner.
+  // Google Analytics 4. Vacío = sin analítica ni modal.
   idAnalitica: 'G-H7LMJGKQ2H',
   // Pérdidas reales de un sistema de 12 V: inversor, cableado y temperatura.
   rendimientoInversor: 0.85,
@@ -29,7 +29,7 @@ const DATOS_LEGALES = {
   titular: 'Alberto Gallardo Morales',
   nif: '06023563R',
   domicilio: 'C/ Golondrinas 4, 2º B, 28400 Collado Villalba, Madrid',
-  email: 'gallardomorales.98@gmail.com',
+  email: 'hola@estacionportatil.com',
   telefono: '',
   registroMercantil: '',
   dominio: 'https://estacionportatil.com',
@@ -132,6 +132,22 @@ const PRODUCTOS = [
     revisadoEl: '',
   },
   {
+    id: 'ecoflow-delta-2-max',
+    nombre: 'EcoFlow Delta 2 Max',
+    capacidadWh: 2048,
+    salidaW: 2400,
+    picoW: 3100,
+    quimica: 'LiFePO4',
+    ciclos: '3.000 al 80 %',
+    pesoKg: 23,
+    puntuacion: 9.3,
+    resumen: '2 kWh con carga rápida y ampliación hasta 6 kWh: la referencia para camper grande o casa.',
+    idealPara: 'Autocaravana, teletrabajo off-grid varios días, respaldo doméstico serio.',
+    pros: ['2.048 Wh ampliables a 6 kWh', '2.400 W continuos (X-Boost 3.100 W)', 'Entrada solar alta y carga X-Stream'],
+    contras: ['23 kg: ya no es de mochila', 'Precio notablemente por encima de la Delta 2'],
+    revisadoEl: '2026-09-15',
+  },
+  {
     id: 'bluetti-ac200max',
     nombre: 'Bluetti AC200MAX',
     capacidadWh: 2048,
@@ -154,7 +170,7 @@ const PANELES = [
   { id: 'panel-100w', nombre: 'Panel plegable de 100 W', wp: 100 },
   { id: 'panel-220w', nombre: 'Panel plegable de 220 W', wp: 220 },
   { id: 'panel-400w', nombre: 'Dos paneles de 220 W en paralelo', wp: 440 },
-  { id: 'panel-600w', nombre: 'Kit rígido de 600 W en techo', wp: 600 },
+  { id: 'panel-600w', nombre: 'Kit rígido EcoFlow ≈600–800 Wp (techo)', wp: 600 },
 ]
 
 /* Enlaces de afiliado (Amazon.es). La etiqueta se añade en afiliados.js.
@@ -162,14 +178,15 @@ const PANELES = [
 const ENLACES_AFILIADOS = {
   'ecoflow-river-2-pro': 'https://www.amazon.es/dp/B0BFQD5RMJ',
   'ecoflow-delta-2': 'https://www.amazon.es/dp/B0BBLV8WJH',
-  // En ES el listado suelto es inestable; este kit incluye la AC180 (1152 Wh).
-  'bluetti-ac180': 'https://www.amazon.es/dp/B0C2V9D7ZQ',
+  // Unitario AC180 (1152 Wh). Si Amazon lo retira, volver al kit B0C2V9D7ZQ.
+  'bluetti-ac180': 'https://www.amazon.es/dp/B0CF1DB45N',
   // Explorer 1000 Plus (1264 Wh). No confundir con 1000 v2 (1070 Wh).
   'jackery-1000-plus': 'https://www.amazon.es/dp/B0C27SX47T',
+  'ecoflow-delta-2-max': 'https://www.amazon.es/dp/B0C4F83WTX',
   'bluetti-ac200max': 'https://www.amazon.es/dp/B0B1BRS8LF',
   'panel-100w': 'https://www.amazon.es/dp/B0BW96ZZNS',
   'panel-220w': 'https://www.amazon.es/dp/B0B12CKM3C',
-  'panel-400w': 'https://www.amazon.es/dp/B0B12CKM3C', // 2×220 W en paralelo
-  // Sin ASIN único fiable de kit rígido 600 W: búsqueda filtrada en Amazon.es.
-  'panel-600w': 'https://www.amazon.es/s?k=kit+solar+600W+techo+autocaravana',
+  'panel-400w': 'https://www.amazon.es/dp/B0B12CKM3C',
+  // EcoFlow rígidos: en la ficha elige la variante ≈600–800 Wp (p. ej. 2×300 / 2×400).
+  'panel-600w': 'https://www.amazon.es/dp/B0BG23MVVV',
 }
