@@ -13,8 +13,14 @@ Intención transaccional. Aquí van los enlaces de afiliado.
 | Página | Intención que cubre |
 |---|---|
 | `comparativa.html` | «mejor estación de energía portátil», «mejores baterías portátiles» |
+| `guias/estacion-energia-portatil-furgoneta-camper.html` | «estación de energía para camper», dimensionado + compra |
+| `guias/estacion-energia-portatil-apagones-casa.html` | «batería de respaldo para apagones» |
 | `guias/ecoflow-delta-2-vs-bluetti-ac180.html` | comparación cabeza a cabeza, el visitante ya está decidiendo |
+| `guias/ecoflow-delta-2-vs-jackery-1000-plus.html` | comparación cabeza a cabeza en gama de 1 kWh |
 | `guias/mejores-baterias-lifepo4-100ah.html` | «mejor batería LiFePO4 100 Ah» |
+
+Para crear o actualizar cualquiera de estas páginas, usar la skill
+`contenido-afiliados` (investigación, plantilla HTML, monetización y publicación).
 
 Las comparativas «X vs Y» son las que mejor convierten de todo el sitio: quien
 busca eso ya tiene la tarjeta en la mano.
@@ -38,13 +44,13 @@ y empujan al lector hacia las páginas de dinero.
 Criterio: primero lo que convierte, después lo que trae volumen.
 
 ### Comparativas directas (máxima conversión)
-1. EcoFlow Delta 2 vs Jackery Explorer 1000 Plus
+1. ~~EcoFlow Delta 2 vs Jackery Explorer 1000 Plus~~ (publicado)
 2. Bluetti AC180 vs AC200MAX: cuándo merece el salto de capacidad
 3. Estación de energía o instalación fija a 12 V: cuentas reales
 
 ### Guías de compra por caso de uso
-4. Mejor estación de energía para furgoneta camper
-5. Mejor batería de respaldo para apagones en casa
+4. ~~Mejor estación de energía para furgoneta camper~~ (publicado)
+5. ~~Mejor batería de respaldo para apagones en casa~~ (publicado)
 6. Kit solar para cabaña sin red eléctrica: dimensionado completo
 7. Mejor estación de energía por debajo de 500 €
 
