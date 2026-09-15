@@ -12,6 +12,8 @@ const AJUSTES = {
   dominio: 'https://estacionportatil.com',
   // Etiqueta de Amazon Afiliados. Sustitúyela por la tuya antes de publicar.
   etiquetaAmazon: 'estacionportatil-21',
+  // Google Analytics 4. Vacío = sin analítica ni banner.
+  idAnalitica: 'G-H7LMJGKQ2H',
   // Pérdidas reales de un sistema de 12 V: inversor, cableado y temperatura.
   rendimientoInversor: 0.85,
   // LiFePO4 admite descargas del 90 % sin penalizar su vida útil.
@@ -160,12 +162,14 @@ const PANELES = [
 const ENLACES_AFILIADOS = {
   'ecoflow-river-2-pro': 'https://www.amazon.es/dp/B0BFQD5RMJ',
   'ecoflow-delta-2': 'https://www.amazon.es/dp/B0BBLV8WJH',
-  // Listado más estable en ES: kit AC180 + panel 200 W (la estación es la misma).
+  // En ES el listado suelto es inestable; este kit incluye la AC180 (1152 Wh).
   'bluetti-ac180': 'https://www.amazon.es/dp/B0C2V9D7ZQ',
+  // Explorer 1000 Plus (1264 Wh). No confundir con 1000 v2 (1070 Wh).
   'jackery-1000-plus': 'https://www.amazon.es/dp/B0C27SX47T',
   'bluetti-ac200max': 'https://www.amazon.es/dp/B0B1BRS8LF',
-  'panel-100w': 'https://www.amazon.es/dp/B0BW96ZZNS', // Bluetti 100 W plegable
-  'panel-220w': 'https://www.amazon.es/dp/B0B12CKM3C', // EcoFlow 220 W bifacial
-  'panel-400w': 'https://www.amazon.es/dp/B0B12CKM3C', // mismo 220 W (hacer 2 en paralelo)
-  'panel-600w': '', // sin ASIN estable de kit rígido 600 W; deja fallback interno
+  'panel-100w': 'https://www.amazon.es/dp/B0BW96ZZNS',
+  'panel-220w': 'https://www.amazon.es/dp/B0B12CKM3C',
+  'panel-400w': 'https://www.amazon.es/dp/B0B12CKM3C', // 2×220 W en paralelo
+  // Sin ASIN único fiable de kit rígido 600 W: búsqueda filtrada en Amazon.es.
+  'panel-600w': 'https://www.amazon.es/s?k=kit+solar+600W+techo+autocaravana',
 }

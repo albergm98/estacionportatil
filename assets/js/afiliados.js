@@ -46,6 +46,9 @@ const medirClicAfiliado = evento => {
     pagina: location.pathname,
     texto: enlace.textContent.trim(),
   })
+  if (typeof gtag === 'function') {
+    gtag('event', 'clic_afiliado', { producto: enlace.dataset.producto, pagina: location.pathname })
+  }
 }
 
 document.addEventListener('DOMContentLoaded', aplicarEnlacesAfiliados)

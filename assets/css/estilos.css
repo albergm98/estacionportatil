@@ -495,6 +495,21 @@ main details:not(.menu__grupo) p {
 .divulgacion .icono { color: #b45309; margin-top: .15em }
 .divulgacion a { color: #78350f }
 
+/* --- Banner cookies (analítica) ---------------------------------------- */
+.banner-cookies {
+  position: fixed; z-index: 80; left: 14px; right: 14px; bottom: 14px;
+  display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between;
+  max-width: 720px; margin-inline: auto;
+  background: var(--grafito-950); color: #e2e8f0; border: 1px solid #334155;
+  border-radius: var(--radio); padding: 16px 18px; box-shadow: var(--sombra-2);
+  font-size: .88rem;
+}
+.banner-cookies p { margin: 0; flex: 1 1 240px; line-height: 1.45 }
+.banner-cookies a { color: var(--verde-300) }
+.banner-cookies__acciones { display: flex; flex-wrap: wrap; gap: 8px }
+.banner-cookies .boton--contorno { border-color: #64748b; color: #e2e8f0 }
+.banner-cookies .boton--contorno:hover { border-color: var(--verde-300); color: var(--verde-300) }
+
 /* --- Pie ----------------------------------------------------------------- */
 .pie { background: var(--grafito-950); color: #94a3b8; padding-block: 56px 28px; font-size: .88rem }
 .pie h4 { color: var(--blanco); font-family: var(--texto); font-size: .74rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; margin-bottom: 16px }
