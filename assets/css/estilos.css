@@ -371,6 +371,10 @@ input[type="range"]::-moz-range-thumb {
   font: inherit; font-size: .9rem; background: var(--blanco); color: var(--tinta); cursor: pointer;
 }
 .selector select:hover { border-color: var(--verde-500) }
+.perfiles { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 18px }
+.perfiles span { color: var(--tinta-suave); font-size: .82rem; margin-right: 4px }
+.perfiles [aria-pressed="true"] { border-color: var(--verde-500); color: var(--verde-600); background: var(--verde-tenue) }
+.escenarios { margin-top: 22px }
 
 .resultado {
   display: grid; gap: 26px; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));

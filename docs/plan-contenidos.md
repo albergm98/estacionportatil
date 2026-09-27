@@ -39,7 +39,8 @@ y empujan al lector hacia las páginas de dinero.
 - `guias/cuantos-paneles-solares-necesito.html`
 - `guias/instalacion-segura-kit-solar-12v.html`
 - `guias/induccion-con-estacion-energia-portatil.html`
-- `metodologia.html` — no posiciona, pero sostiene la confianza y el E-E-A-T
+- `metodologia.html` y `autor.html` — no posicionan, pero sostienen la confianza
+  y el E-E-A-T: todas las guías firman con el autor y enlazan a su página
 
 ---
 
@@ -79,8 +80,9 @@ Criterio: primero lo que convierte, después lo que trae volumen.
   `dateModified` en el JSON-LD y el campo `revisadoEl` en `datos.js`. Una
   comparativa de 2026 que sigue diciendo 2026 en 2027 pierde posiciones.
 - **Ampliar la calculadora** es más rentable que escribir un artículo más: añade
-  aparatos nuevos en `DISPOSITIVOS` y perfiles predefinidos (camper, cabaña,
-  respaldo doméstico).
+  aparatos nuevos en `DISPOSITIVOS` y casos en `PERFILES` (hoy: camper, cabaña,
+  apagón y teletrabajo). Cada caso tiene su fila calculada en la tabla estática
+  de `index.html`, que es lo que lee Google: si cambias uno, recalcula su fila.
 - **Nunca precios en el texto.** Cambian cada semana y queman la credibilidad.
 
 ---

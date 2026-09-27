@@ -39,7 +39,15 @@
       "url": "https://estacionportatil.com/",
       "name": "Estacionportatil",
       "inLanguage": "es-ES",
-      "description": "Análisis independientes de energía solar portátil y sistemas off-grid."
+      "description": "Análisis independientes de energía solar portátil y sistemas off-grid.",
+      "publisher": { "@id": "https://estacionportatil.com/#organizacion" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://estacionportatil.com/#organizacion",
+      "name": "Estacionportatil",
+      "url": "https://estacionportatil.com/",
+      "logo": { "@type": "ImageObject", "url": "https://estacionportatil.com/assets/img/apple-touch-icon.png", "width": 180, "height": 180 }
     },
     {
       "@type": "WebApplication",
@@ -100,7 +108,7 @@
       <details class="menu__grupo">
         <summary>Guías</summary>
         <div class="menu__lista">
-          <a href="#guias">Todas las guías</a>
+          <a href="guias/">Todas las guías</a>
           <a href="guias/estacion-energia-portatil-furgoneta-camper.html">Estación para camper</a>
           <a href="guias/estacion-energia-portatil-apagones-casa.html">Estación para apagones</a>
           <a href="guias/estacion-energia-portatil-menos-500-euros.html">Estación por menos de 500 €</a>
@@ -215,6 +223,7 @@
       </div>
 
       <div class="panel">
+        <div class="perfiles" id="perfiles" role="group" aria-label="Casos de ejemplo"><span>Empieza por un caso:</span></div>
         <div class="selector">
           <div>
             <label for="zona-solar">Radiación solar de referencia</label>
@@ -261,6 +270,22 @@
         </dl>
 
         <p class="nota-tabla">El cálculo aplica un 90 % de descarga útil (propio del LiFePO4), un 85 % de rendimiento del inversor y un 75 % de rendimiento fotovoltaico. Es una estimación de dimensionado, no una medición: <a href="metodologia.html">aquí está la fórmula completa</a>.</p>
+      </div>
+
+      <div class="escenarios">
+        <h3>Los cuatro casos, ya calculados</h3>
+        <div class="tabla-envoltorio" style="margin-block:14px">
+          <table>
+            <thead><tr><th scope="col">Caso</th><th scope="col">Consumo diario</th><th scope="col">Batería útil</th><th scope="col">Panel</th><th scope="col">Estación</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Camper, 2 noches</th><td data-etiqueta="Consumo">750 Wh</td><td data-etiqueta="Batería">1.961 Wh</td><td data-etiqueta="Panel">250 Wp</td><td data-etiqueta="Estación"><a href="comparativa.html#ecoflow-delta-2-max">EcoFlow Delta 2 Max</a></td></tr>
+              <tr><th scope="row">Cabaña en verano</th><td data-etiqueta="Consumo">1.105 Wh</td><td data-etiqueta="Batería">1.444 Wh</td><td data-etiqueta="Panel">246 Wp</td><td data-etiqueta="Estación"><a href="comparativa.html#ecoflow-delta-2-max">EcoFlow Delta 2 Max</a></td></tr>
+              <tr><th scope="row">Apagón en un piso</th><td data-etiqueta="Consumo">920 Wh</td><td data-etiqueta="Batería">1.203 Wh</td><td data-etiqueta="Panel">307 Wp</td><td data-etiqueta="Estación"><a href="comparativa.html#jackery-1000-plus">Jackery Explorer 1000 Plus</a></td></tr>
+              <tr><th scope="row">Teletrabajo</th><td data-etiqueta="Consumo">625 Wh</td><td data-etiqueta="Batería">817 Wh</td><td data-etiqueta="Panel">208 Wp</td><td data-etiqueta="Estación"><a href="comparativa.html#ecoflow-delta-2">EcoFlow Delta 2</a></td></tr>
+            </tbody>
+          </table>
+          <p class="nota-tabla">Camper: nevera, portátil, luces, móviles, bomba y ventilador durante dos días, con la media anual de sol. Cabaña: lo mismo con más horas de ventilador y sol de verano en el sur. Apagón: nevera, portátil, luces y móviles un día. Teletrabajo: portátil ocho horas, luces y móviles.</p>
+        </div>
       </div>
 
       <p class="divulgacion">
@@ -503,7 +528,7 @@
         <ul>
           <li><a href="#calculadora"><svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-calculator"/></svg> Calculadora de consumo</a></li>
           <li><a href="comparativa.html"><svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-table-2"/></svg> Comparativa 2026</a></li>
-          <li><a href="#guias"><svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-book-open"/></svg> Guías y análisis</a></li>
+          <li><a href="guias/"><svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-book-open"/></svg> Guías y análisis</a></li>
           <li><a href="metodologia.html"><svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-shield-check"/></svg> Cómo analizamos</a></li>
           <li><a href="creditos.html"><svg class="icono icono--s" aria-hidden="true"><use href="assets/img/iconos.svg#i-file-text"/></svg> Créditos de imágenes</a></li>
         </ul>
@@ -520,6 +545,7 @@
         <a href="legal/privacidad.html">Privacidad</a>
         <a href="legal/cookies.html">Cookies</a>
         <a href="legal/afiliados.html">Afiliación</a>
+        <a href="autor.html">Quién escribe</a>
       </nav>
     </div>
   </div>

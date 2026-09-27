@@ -7,6 +7,7 @@
 const zona = document.getElementById('zona-solar')
 const dias = document.getElementById('dias-autonomia')
 const lista = document.getElementById('lista-dispositivos')
+const perfiles = document.getElementById('perfiles')
 
 /* Devuelve el marcado de un icono del sprite local. */
 const icono = (nombre, clase = 'icono') =>
@@ -67,11 +68,38 @@ const calcular = () => {
   aplicarEnlacesAfiliados()
 }
 
-/* Un solo escuchador en el contenedor en lugar de uno por deslizante. */
+/* Un botón por caso de ejemplo de PERFILES (datos.js). */
+const dibujarPerfiles = () => {
+  perfiles.insertAdjacentHTML('beforeend', PERFILES.map(perfil =>
+    `<button type="button" class="boton boton--contorno boton--mini" data-perfil="${perfil.id}" aria-pressed="false">${perfil.nombre}</button>`).join(''))
+}
+
+/* Marca como pulsado solo el botón activo; sin argumento, ninguno. */
+const marcarPerfil = activo =>
+  perfiles.querySelectorAll('[data-perfil]').forEach(boton => boton.setAttribute('aria-pressed', boton === activo))
+
+/* Vuelca un caso en los controles; los aparatos que no nombra quedan a 0. */
+const aplicarPerfil = boton => {
+  const perfil = PERFILES.find(caso => caso.id === boton.dataset.perfil)
+  zona.value = perfil.zona
+  dias.value = perfil.dias
+  DISPOSITIVOS.forEach(aparato => { document.getElementById(aparato.id).value = perfil.horas[aparato.id] ?? 0 })
+  marcarPerfil(boton)
+  calcular()
+}
+
+/* Un escuchador por tipo de evento en el contenedor, no uno por control.
+   Tocar un control a mano deja de ser el caso de ejemplo. */
 const iniciarCalculadora = () => {
   if (!lista) return
   dibujarDispositivos()
-  document.getElementById('calculadora').addEventListener('input', calcular)
+  dibujarPerfiles()
+  const calculadora = document.getElementById('calculadora')
+  calculadora.addEventListener('input', () => { marcarPerfil(); calcular() })
+  calculadora.addEventListener('click', evento => {
+    const boton = evento.target.closest('[data-perfil]')
+    if (boton) aplicarPerfil(boton)
+  })
   calcular()
 }
 

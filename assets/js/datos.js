@@ -62,6 +62,16 @@ const DISPOSITIVOS = [
   { id: 'cafetera', nombre: 'Cafetera o hervidor', icono: 'coffee', vatios: 1000, horas: 0, nota: '1000 W · picos cortos pero intensos' },
 ]
 
+/* Casos de ejemplo de la calculadora. Los aparatos que no aparecen en
+   `horas` quedan a 0, y las horas van en pasos de 0,5 como los deslizantes.
+   Si cambias un caso, actualiza su fila en la tabla de casos de index.html. */
+const PERFILES = [
+  { id: 'camper', nombre: 'Camper, 2 noches', zona: 'media-anual', dias: 2, horas: { nevera: 9, portatil: 2, luces: 4, movil: 2, bomba: 0.5, ventilador: 4 } },
+  { id: 'cabana', nombre: 'Cabaña en verano', zona: 'verano-sur', dias: 1, horas: { nevera: 12, portatil: 3, luces: 5, movil: 3, bomba: 1, ventilador: 8 } },
+  { id: 'apagon', nombre: 'Apagón en un piso', zona: 'media-anual', dias: 1, horas: { nevera: 12, portatil: 4, luces: 5, movil: 3 } },
+  { id: 'teletrabajo', nombre: 'Teletrabajo', zona: 'media-anual', dias: 1, horas: { portatil: 8, luces: 4, movil: 3 } },
+]
+
 /* Estaciones de energía ordenadas por capacidad: la calculadora elige la
    primera cuya capacidad cubre la necesidad estimada.
    ⚠️ Especificaciones según ficha del fabricante. Verifícalas y anota la fecha

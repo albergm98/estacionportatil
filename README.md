@@ -28,8 +28,9 @@ index.html              Portada: calculadora, comparativa resumida, guías, FAQ
 comparativa.html        Página de dinero: 6 estaciones con pros y contras
 metodologia.html        Cómo puntuamos y qué fórmulas usa la calculadora
 creditos.html           Origen y licencia de imágenes, iconos y tipografías
-guias/                  11 guías: de compra, comparativas y técnicas
-legal/                  Aviso legal, privacidad, cookies y afiliación
+autor.html              Quién escribe: método, límites y contacto (schema Person)
+guias/                  11 guías (compra, comparativas, técnica) e index.html que las lista
+legal/                  Aviso legal, privacidad, cookies, afiliación e index.html
 robots.txt  sitemap.xml  _redirects
 
 assets/css/estilos.css  Todo el diseño. Sin framework ni CDN
@@ -58,6 +59,7 @@ docs/                   Estrategia de monetización y plan de contenidos
 | Mis datos como titular (NIF, domicilio, email) | `DATOS_LEGALES` en `datos.js` |
 | Añadir o cambiar un producto | `PRODUCTOS` en `datos.js` |
 | Añadir un aparato a la calculadora | `DISPOSITIVOS` en `datos.js` |
+| Cambiar los casos de ejemplo de la calculadora | `PERFILES` en `datos.js` y su fila en la tabla de casos de `index.html` |
 | Cambiar colores o tipografías | Variables `:root` en `estilos.css` |
 | Añadir un icono | `herramientas/construir-sprite.ps1` |
 | Añadir una foto nueva | `herramientas/descargar-fotos.py` y luego `optimizar-imagenes.py` |
@@ -114,9 +116,10 @@ Los scripts de imágenes no repiten trabajo: si el fichero ya existe, lo saltan.
 
 ## Estado y pendientes
 
-Hecho: diseño, calculadora, comparativa, 11 guías, legales, SEO técnico
-(canónicas, Open Graph, JSON-LD con Article, FAQPage, ItemList y BreadcrumbList,
-sitemap y robots) e infraestructura de afiliación.
+Hecho: diseño, calculadora con casos de ejemplo, comparativa, 11 guías con su
+índice, página de autor, legales, SEO técnico (canónicas, Open Graph, JSON-LD con
+Article, FAQPage, ItemList, BreadcrumbList, CollectionPage, Person y
+Organization, sitemap y robots) e infraestructura de afiliación.
 
 Pendiente antes de publicar:
 
@@ -128,5 +131,6 @@ Pendiente antes de publicar:
    Están tomadas de fichas de fabricante pero no auditadas una por una.
 4. Cambiar el dominio `estacionportatil.com` por el tuyo en las etiquetas
    canónicas, Open Graph, `sitemap.xml` y `robots.txt`.
-5. Poner un autor real con nombre y experiencia en las fichas de autor: es el
-   factor E-E-A-T que más cuesta y más diferencia.
+5. Añadir a `autor.html` experiencia verificable (qué equipos has usado, dónde,
+   fotos propias): es el factor E-E-A-T que más cuesta y más diferencia. Hoy
+   la página solo recoge método, límites y contacto.
