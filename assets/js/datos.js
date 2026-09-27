@@ -64,9 +64,57 @@ const DISPOSITIVOS = [
 
 /* Estaciones de energía ordenadas por capacidad: la calculadora elige la
    primera cuya capacidad cubre la necesidad estimada.
-   s⚠️ Especificaciones según ficha del fabricante. Verifícalas y anota la fecha
+   ⚠️ Especificaciones según ficha del fabricante. Verifícalas y anota la fecha
    en `revisadoEl` antes de publicar: es lo que sostiene tu credibilidad. */
 const PRODUCTOS = [
+  {
+    id: 'ecoflow-river-3-plus',
+    nombre: 'EcoFlow River 3 Plus',
+    capacidadWh: 286,
+    salidaW: 600,
+    picoW: 1200,
+    quimica: 'LiFePO4',
+    ciclos: '3.000 al 80 %',
+    pesoKg: 4.7,
+    puntuacion: 8.4,
+    resumen: 'Pequeña y silenciosa, pero ampliable hasta 858 Wh con una batería extra que se acopla sin cables.',
+    idealPara: 'SAI de router u ordenador, escapadas cortas, empezar pequeño y ampliar después.',
+    pros: ['Ampliable hasta 858 Wh sin cables', 'SAI en menos de 10 ms con aviso al PC', 'Carga completa en 1 hora'],
+    contras: ['286 Wh solos se quedan cortos para una nevera', 'X-Boost no da 1.200 W reales: baja la tensión'],
+    revisadoEl: '2026-09-27',
+  },
+  {
+    id: 'bluetti-elite-30-v2',
+    nombre: 'Bluetti Elite 30 V2',
+    capacidadWh: 288,
+    salidaW: 600,
+    picoW: 1500,
+    quimica: 'LiFePO4',
+    ciclos: 'Más de 3.000 (sin umbral publicado)',
+    pesoKg: 4.3,
+    puntuacion: 8.5,
+    resumen: 'La más ligera de las recomendadas: 4,3 kg y USB-C de 140 W para el portátil.',
+    idealPara: 'Mochila, fotografía y dron, teletrabajo con portátil lejos de un enchufe.',
+    pros: ['Solo 4,3 kg', 'USB-C de 140 W', '0-80 % en 45 minutos'],
+    contras: ['No admite batería de ampliación', 'Bluetti no publica a qué capacidad mide los ciclos'],
+    revisadoEl: '2026-09-27',
+  },
+  {
+    id: 'jackery-explorer-500-v2',
+    nombre: 'Jackery Explorer 500 v2',
+    capacidadWh: 512,
+    salidaW: 500,
+    picoW: 1000,
+    quimica: 'LiFePO4',
+    ciclos: '6.000 al 70 %',
+    pesoKg: 5.7,
+    puntuacion: 8.8,
+    resumen: 'Casi el doble de energía que las de mochila con solo kilo y medio más.',
+    idealPara: 'Fin de semana con nevera y panel, apagones cortos, camping con portátil.',
+    pros: ['512 Wh en 5,7 kg', 'Funciona de -20 a 45 °C', 'SAI en 10 ms o menos'],
+    contras: ['500 W: ni hervidor ni cafetera', 'Sin batería de ampliación', 'Solo dos enchufes'],
+    revisadoEl: '2026-09-27',
+  },
   {
     id: 'ecoflow-river-2-pro',
     nombre: 'EcoFlow River 2 Pro',
@@ -176,6 +224,10 @@ const PANELES = [
 /* Enlaces de afiliado (Amazon.es). La etiqueta se añade en afiliados.js.
    Cadena vacía → el botón va a la comparativa interna. ASINs revisados 2026-09. */
 const ENLACES_AFILIADOS = {
+  'ecoflow-river-3-plus': 'https://www.amazon.es/dp/B0DFVZ6MYX',
+  'bluetti-elite-30-v2': 'https://www.amazon.es/dp/B0F9FN228S',
+  // Unitario Explorer 500 v2. No usar B0FL2LJ9D8: es el pack con panel de 100 W.
+  'jackery-explorer-500-v2': 'https://www.amazon.es/dp/B0FL2J6Y8M',
   'ecoflow-river-2-pro': 'https://www.amazon.es/dp/B0BFQD5RMJ',
   'ecoflow-delta-2': 'https://www.amazon.es/dp/B0BBLV8WJH',
   // Unitario AC180 (1152 Wh). Si Amazon lo retira, volver al kit B0C2V9D7ZQ.

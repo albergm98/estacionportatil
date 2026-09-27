@@ -25,10 +25,10 @@ tienen plan gratuito suficiente y entienden el fichero `_redirects`.
 
 ```
 index.html              Portada: calculadora, comparativa resumida, guías, FAQ
-comparativa.html        Página de dinero: 5 estaciones con pros y contras
+comparativa.html        Página de dinero: 6 estaciones con pros y contras
 metodologia.html        Cómo puntuamos y qué fórmulas usa la calculadora
 creditos.html           Origen y licencia de imágenes, iconos y tipografías
-guias/                  4 guías técnicas
+guias/                  11 guías: de compra, comparativas y técnicas
 legal/                  Aviso legal, privacidad, cookies y afiliación
 robots.txt  sitemap.xml  _redirects
 
@@ -114,7 +114,7 @@ Los scripts de imágenes no repiten trabajo: si el fichero ya existe, lo saltan.
 
 ## Estado y pendientes
 
-Hecho: diseño, calculadora, comparativa, 4 guías, legales, SEO técnico
+Hecho: diseño, calculadora, comparativa, 11 guías, legales, SEO técnico
 (canónicas, Open Graph, JSON-LD con Article, FAQPage, ItemList y BreadcrumbList,
 sitemap y robots) e infraestructura de afiliación.
 

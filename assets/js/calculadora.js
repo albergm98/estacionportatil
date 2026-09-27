@@ -50,7 +50,7 @@ const calcular = () => {
   const hsp = HORAS_SOL_PICO.find(z => z.id === zona.value).hsp
   const bateriaWh = Math.round(wh * Number(dias.value) / (AJUSTES.profundidadDescarga * AJUSTES.rendimientoInversor))
   const panelWp = Math.round(wh / (hsp * AJUSTES.rendimientoFotovoltaico))
-  const producto = elegir(PRODUCTOS, 'capacidadWh', bateriaWh)
+  const producto = elegir(PRODUCTOS.filter(estacion => estacion.salidaW >= pico), 'capacidadWh', bateriaWh) || PRODUCTOS.at(-1)
   const panel = elegir(PANELES, 'wp', panelWp)
 
   document.getElementById('consumo-wh').textContent = wh.toLocaleString('es-ES')

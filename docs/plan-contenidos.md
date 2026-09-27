@@ -17,6 +17,9 @@ Intención transaccional. Aquí van los enlaces de afiliado.
 | `guias/estacion-energia-portatil-apagones-casa.html` | «batería de respaldo para apagones» |
 | `guias/ecoflow-delta-2-vs-bluetti-ac180.html` | comparación cabeza a cabeza, el visitante ya está decidiendo |
 | `guias/ecoflow-delta-2-vs-jackery-1000-plus.html` | comparación cabeza a cabeza en gama de 1 kWh |
+| `guias/bluetti-ac180-vs-ac200max.html` | salto de 1 a 2 kWh, el visitante duda entre gamas |
+| `guias/estacion-portatil-o-instalacion-12v.html` | decisión previa: estación portátil o instalación fija |
+| `guias/estacion-energia-portatil-menos-500-euros.html` | «mejor estación de energía por menos de 500 €», presupuesto cerrado |
 | `guias/mejores-baterias-lifepo4-100ah.html` | «mejor batería LiFePO4 100 Ah» |
 
 Para crear o actualizar cualquiera de estas páginas, usar la skill
@@ -35,6 +38,7 @@ y empujan al lector hacia las páginas de dinero.
 - `index.html#calculadora` — la herramienta, el mejor imán de enlaces
 - `guias/cuantos-paneles-solares-necesito.html`
 - `guias/instalacion-segura-kit-solar-12v.html`
+- `guias/induccion-con-estacion-energia-portatil.html`
 - `metodologia.html` — no posiciona, pero sostiene la confianza y el E-E-A-T
 
 ---
@@ -52,7 +56,7 @@ Criterio: primero lo que convierte, después lo que trae volumen.
 4. ~~Mejor estación de energía para furgoneta camper~~ (publicado)
 5. ~~Mejor batería de respaldo para apagones en casa~~ (publicado)
 6. Kit solar para cabaña sin red eléctrica: dimensionado completo
-7. Mejor estación de energía por debajo de 500 €
+7. ~~Mejor estación de energía por debajo de 500 €~~ (publicado)
 
 ### Informativas de volumen (traen tráfico y enlaces)
 8. LiFePO4 frente a iones de litio: cuál compensa y por qué
