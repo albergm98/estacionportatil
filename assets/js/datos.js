@@ -10,8 +10,8 @@
 const AJUSTES = {
   marca: 'Estacionportatil',
   dominio: 'https://estacionportatil.com',
-  // Etiqueta de Amazon Afiliados. Sustitúyela por la tuya antes de publicar.
-  etiquetaAmazon: 'estacionportatil-21',
+  // Número de seguimiento de Amazon Afiliados (tag=). ID de tienda: estacionporta-21.
+  etiquetaAmazon: 'alberto04f-21',
   // Google Analytics 4. Vacío = sin analítica ni modal.
   idAnalitica: 'G-H7LMJGKQ2H',
   // Pérdidas reales de un sistema de 12 V: inversor, cableado y temperatura.
@@ -155,7 +155,39 @@ const PRODUCTOS = [
     idealPara: 'Camper de uso continuo, respaldo doméstico, cafetera puntual.',
     pros: ['0-80 % en 50 minutos desde la red', 'Amplía hasta 3 kWh con batería extra', 'App y control de carga muy maduros'],
     contras: ['El ventilador se oye al cargar rápido', 'Batería de ampliación cara'],
-    revisadoEl: '',
+    revisadoEl: '2026-10-15',
+  },
+  {
+    id: 'ecoflow-delta-3-classic',
+    nombre: 'EcoFlow Delta 3 Classic',
+    capacidadWh: 1024,
+    salidaW: 1800,
+    picoW: 3600,
+    quimica: 'LiFePO4',
+    ciclos: 'Más de 4.000 (EcoFlow declara 10 años)',
+    pesoKg: 12.1,
+    puntuacion: 9.4,
+    resumen: 'Sucesora de la Delta 2 en formato fijo: misma capacidad, SAI de 10 ms y carga 0-80 % en 45 minutos.',
+    idealPara: 'Apagones, teletrabajo y camping sin plan de ampliar batería.',
+    pros: ['0-80 % en 45 minutos', 'SAI en 10 ms', 'Menos de 30 dB a 600 W'],
+    contras: ['No admite batería de ampliación', 'Solo 1.800 W continuos (X-Boost 2.400 W)'],
+    revisadoEl: '2026-10-15',
+  },
+  {
+    id: 'anker-solix-c1000-gen2',
+    nombre: 'Anker SOLIX C1000 Gen 2',
+    capacidadWh: 1024,
+    salidaW: 2000,
+    picoW: 3000,
+    quimica: 'LiFePO4',
+    ciclos: '4.000 al 80 %',
+    pesoKg: 11.3,
+    puntuacion: 9.5,
+    resumen: '1.024 Wh con 2.000 W reales y carga completa en 49 minutos: la rival directa de la Delta 3 Classic.',
+    idealPara: 'Inducción puntual, carga rápida desde el enchufe, respaldo de CPAP u ordenador.',
+    pros: ['2.000 W continuos', 'Carga completa en 49 minutos', 'Entrada solar de 600 W'],
+    contras: ['No admite batería de ampliación', 'Ecosistema y app menos maduros que EcoFlow'],
+    revisadoEl: '2026-10-15',
   },
   {
     id: 'bluetti-ac180',
@@ -239,7 +271,11 @@ const ENLACES_AFILIADOS = {
   // Unitario Explorer 500 v2. No usar B0FL2LJ9D8: es el pack con panel de 100 W.
   'jackery-explorer-500-v2': 'https://www.amazon.es/dp/B0FL2J6Y8M',
   'ecoflow-river-2-pro': 'https://www.amazon.es/dp/B0BFQD5RMJ',
-  'ecoflow-delta-2': 'https://www.amazon.es/dp/B0BBLV8WJH',
+  // El ASIN antiguo (B0BBLV8WJH / B0BBLVZRZ7) ahora es la batería extra, no la estación.
+  'ecoflow-delta-2': '',
+  'ecoflow-delta-3-classic': 'https://www.amazon.es/dp/B0GMCHYHQR',
+  // Unitario C1000 Gen 2. No usar B0FN7SVNGY (100 W) ni B0FN7PVR91 (200 W): son packs.
+  'anker-solix-c1000-gen2': 'https://www.amazon.es/dp/B0FN7MSY4L',
   // Unitario AC180 (1152 Wh). Si Amazon lo retira, volver al kit B0C2V9D7ZQ.
   'bluetti-ac180': 'https://www.amazon.es/dp/B0CF1DB45N',
   // Explorer 1000 Plus (1264 Wh). No confundir con 1000 v2 (1070 Wh).

@@ -29,7 +29,7 @@ comparativa.html        Página de dinero: 6 estaciones con pros y contras
 metodologia.html        Cómo puntuamos y qué fórmulas usa la calculadora
 creditos.html           Origen y licencia de imágenes, iconos y tipografías
 autor.html              Quién escribe: método, límites y contacto (schema Person)
-guias/                  11 guías (compra, comparativas, técnica) e index.html que las lista
+guias/                  12 guías (compra, comparativas, técnica) e index.html que las lista
 legal/                  Aviso legal, privacidad, cookies, afiliación e index.html
 robots.txt  sitemap.xml  _redirects
 
@@ -116,7 +116,7 @@ Los scripts de imágenes no repiten trabajo: si el fichero ya existe, lo saltan.
 
 ## Estado y pendientes
 
-Hecho: diseño, calculadora con casos de ejemplo, comparativa, 11 guías con su
+Hecho: diseño, calculadora con casos de ejemplo, comparativa, 12 guías con su
 índice, página de autor, legales, SEO técnico (canónicas, Open Graph, JSON-LD con
 Article, FAQPage, ItemList, BreadcrumbList, CollectionPage, Person y
 Organization, sitemap y robots) e infraestructura de afiliación.

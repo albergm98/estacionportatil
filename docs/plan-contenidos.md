@@ -20,6 +20,7 @@ Intención transaccional. Aquí van los enlaces de afiliado.
 | `guias/bluetti-ac180-vs-ac200max.html` | salto de 1 a 2 kWh, el visitante duda entre gamas |
 | `guias/estacion-portatil-o-instalacion-12v.html` | decisión previa: estación portátil o instalación fija |
 | `guias/estacion-energia-portatil-menos-500-euros.html` | «mejor estación de energía por menos de 500 €», presupuesto cerrado |
+| `guias/anker-solix-c1000-gen2-vs-ecoflow-delta-3-classic.html` | Anker C1000 Gen 2 vs Delta 3 Classic, decisión en gama 1 kWh |
 | `guias/mejores-baterias-lifepo4-100ah.html` | «mejor batería LiFePO4 100 Ah» |
 
 Para crear o actualizar cualquiera de estas páginas, usar la skill
@@ -52,6 +53,7 @@ Criterio: primero lo que convierte, después lo que trae volumen.
 1. ~~EcoFlow Delta 2 vs Jackery Explorer 1000 Plus~~ (publicado)
 2. ~~Bluetti AC180 vs AC200MAX: cuándo merece el salto de capacidad~~ (publicado)
 3. ~~Estación de energía o instalación fija a 12 V: cuentas reales~~ (publicado)
+3b. ~~Anker SOLIX C1000 Gen 2 vs EcoFlow Delta 3 Classic~~ (publicado 2026-10-15)
 
 ### Guías de compra por caso de uso
 4. ~~Mejor estación de energía para furgoneta camper~~ (publicado)

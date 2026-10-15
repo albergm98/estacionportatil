@@ -6,7 +6,7 @@
 
   <url>
     <loc>https://estacionportatil.com/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://estacionportatil.com/guias/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36,6 +36,11 @@
   <url>
     <loc>https://estacionportatil.com/guias/estacion-energia-portatil-menos-500-euros.html</loc>
     <lastmod>2026-09-27</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://estacionportatil.com/guias/anker-solix-c1000-gen2-vs-ecoflow-delta-3-classic.html</loc>
+    <lastmod>2026-10-15</lastmod>
     <priority>0.85</priority>
   </url>
   <url>
